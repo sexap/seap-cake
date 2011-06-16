@@ -1,0 +1,6 @@
+2011-06-14 03:36:07 Debug: Notice (1024): Please change the value of 'Security.salt' in app/config/core.php to a salt value specific to your application in [C:\wamp\www\sexap\cake\libs\debugger.php, line 684]
+2011-06-14 03:36:07 Debug: Notice (1024): Please change the value of 'Security.cipherSeed' in app/config/core.php to a numeric (digits only) seed value specific to your application in [C:\wamp\www\sexap\cake\libs\debugger.php, line 688]
+2011-06-15 01:18:37 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\sexap\cake\basics.php, line 240]
+2011-06-15 01:18:37 Debug: Notice (8): Undefined offset: 1 in [C:\wamp\www\sexap\cake\libs\model\model.php, line 619]
+2011-06-15 01:18:45 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\sexap\cake\basics.php, line 240]
+2011-06-15 01:18:45 Debug: Notice (8): Undefined offset: 1 in [C:\wamp\www\sexap\cake\libs\model\model.php, line 619]
