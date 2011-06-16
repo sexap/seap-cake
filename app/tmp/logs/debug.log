@@ -4,3 +4,5 @@
 2011-06-15 01:18:37 Debug: Notice (8): Undefined offset: 1 in [C:\wamp\www\sexap\cake\libs\model\model.php, line 619]
 2011-06-15 01:18:45 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\sexap\cake\basics.php, line 240]
 2011-06-15 01:18:45 Debug: Notice (8): Undefined offset: 1 in [C:\wamp\www\sexap\cake\libs\model\model.php, line 619]
+2011-06-16 18:52:53 Debug: Notice (8): Undefined offset: 0 in [C:\wamp\www\sexap\cake\basics.php, line 240]
+2011-06-16 18:52:53 Debug: Notice (8): Undefined offset: 1 in [C:\wamp\www\sexap\cake\libs\model\model.php, line 619]

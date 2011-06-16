@@ -1,2 +1,2 @@
-1308235215
+1308251082
 a:4:{s:2:"id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:32;s:3:"key";s:7:"primary";}s:6:"nombre";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:512;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}s:7:"horario";a:6:{s:4:"type";s:6:"string";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:512;s:7:"collate";s:15:"utf8_general_ci";s:7:"charset";s:4:"utf8";}s:6:"uea_id";a:4:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:32;}}

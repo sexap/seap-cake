@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-06-2011 a las 18:19:12
+-- Tiempo de generación: 16-06-2011 a las 19:06:09
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -116,6 +116,30 @@ CREATE TABLE IF NOT EXISTS `grupos` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `grupos_usuarios_miembros`
+--
+
+DROP TABLE IF EXISTS `grupos_usuarios_miembros`;
+CREATE TABLE IF NOT EXISTS `grupos_usuarios_miembros` (
+  `grupo_id` int(32) unsigned NOT NULL,
+  `usuario_id` int(32) unsigned NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grupos_usuarios_responsables`
+--
+
+DROP TABLE IF EXISTS `grupos_usuarios_responsables`;
+CREATE TABLE IF NOT EXISTS `grupos_usuarios_responsables` (
+  `grupo_id` int(32) unsigned NOT NULL,
+  `usuario_id` int(32) unsigned NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `permisos`
 --
 
@@ -220,4 +244,4 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `razon` varchar(2048) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mat_eco` (`mat_eco`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;

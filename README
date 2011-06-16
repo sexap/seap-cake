@@ -15,3 +15,7 @@ Hay un volcado de la estructura de las tablas en
 
 y un volcado de los datos con los que he trabajado en
 /db_data.sql
+
+He creado un usuario para fácil ingreso, tendrá todos los permisos (cuando esté implementado)
+matricula:  1234
+contraseña: 1234

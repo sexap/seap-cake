@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-06-2011 a las 18:22:42
+-- Tiempo de generación: 16-06-2011 a las 19:06:27
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -65,6 +65,16 @@ INSERT INTO `grupos` (`id`, `nombre`, `horario`, `uea_id`) VALUES
 (3, 'CAT-09', 'Lunes, Miercoles y Viernes 7.00 - 8.30', 4);
 
 --
+-- Volcar la base de datos para la tabla `grupos_usuarios_miembros`
+--
+
+
+--
+-- Volcar la base de datos para la tabla `grupos_usuarios_responsables`
+--
+
+
+--
 -- Volcar la base de datos para la tabla `permisos`
 --
 
@@ -121,4 +131,5 @@ INSERT INTO `ueas` (`id`, `nombre`) VALUES
 INSERT INTO `usuarios` (`id`, `nombre`, `mat_eco`, `contrasena`, `car_depto`, `imagen`, `firma`, `correo`, `telefono`, `twitter`, `facebook`, `baneado`, `razon`) VALUES
 (1, 'Ernesto CastelÃ¡n ChÃ¡vez', 208303064, 'b8e0567b7bc83448b7c03c2e589c1a9c77728b70', 'Ing. ComputaciÃ³n', '', '', '', '', '', '', 0, ''),
 (2, 'Juan Perez', 208555666, 'b9c989e04e968069dec4399654f5dbaad8542840', 'SociologÃ­a', '', '', '', '', '', '', 0, ''),
-(3, 'Maloso', 666, 'cd3f0c85b158c08a2b113464991810cf2cdfc387', '', '', '', '', '', '', '', 1, 'Por maloso');
+(3, 'Maloso', 666, 'cd3f0c85b158c08a2b113464991810cf2cdfc387', '', '', '', '', '', '', '', 1, 'Por maloso'),
+(4, 'Pruebas', 1234, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '', '', '', '', '', 0, '');
