@@ -7,4 +7,6 @@
 <?php echo $html->link('Envios',array('controller' => 'envios'))?> <br/>
 <?php echo $html->link('Comentarios',array('controller' => 'comentarios'))?> <br/>
 <?php echo $html->link('Permisos',array('controller' => 'permisos'))?> <br/>
+<br/>
+<?php echo $html->link('Entrar',array('controller' => 'usuarios', 'action' => 'login'))?> <br/>
 <?php echo $html->link('Salir',array('controller' => 'usuarios', 'action' => 'logout'))?> <br/>

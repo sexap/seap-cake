@@ -1,4 +1,19 @@
-ï»¿Todos los archivos de la aplicaciÃ³n estÃ¡n en
+Quité del control de versiones los archivos temporales y de caché que genera cake. Tan sólo he dejado la estructura de carpetas para que todo pueda funcionar.
+
+** No agregar ningún archivo de la carpeta /app/tmp **
+
+[Ernesto]
+---
+
+He creado un usuario para fácil ingreso
+Tendrá todos los permisos (cuando esté implementado)
+matricula:  1234
+contraseña: 1234
+
+[Ernesto]
+---
+
+Todos los archivos de la aplicación están en
 /app
 
 Los modelos van en 
@@ -15,8 +30,3 @@ Hay un volcado de la estructura de las tablas en
 
 y un volcado de los datos con los que he trabajado en
 /db_data.sql
-
-He creado un usuario para fÃ¡cil ingreso
-TendrÃ¡ todos los permisos (cuando estÃ© implementado)
-matricula:  1234
-contraseÃ±a: 1234
