@@ -1,19 +1,19 @@
-QuitÈ del control de versiones los archivos temporales y de cachÈ que genera cake. Tan sÛlo he dejado la estructura de carpetas para que todo pueda funcionar.
+Quit√© del control de versiones los archivos temporales y de cach√© que genera cake. Tan s√≥lo he dejado la estructura de carpetas para que todo pueda funcionar.
 
-** No agregar ning˙n archivo de la carpeta /app/tmp **
+** No agregar ning√∫n archivo de la carpeta /app/tmp **
 
 [Ernesto]
 ---
 
-He creado un usuario para f·cil ingreso
-Tendr· todos los permisos (cuando estÈ implementado)
+He creado un usuario para f√°cil ingreso
+Tendr√° todos los permisos (cuando est√© implementado)
 matricula:  1234
-contraseÒa: 1234
+contrase√±a: 1234
 
 [Ernesto]
 ---
 
-Todos los archivos de la aplicaciÛn est·n en
+Todos los archivos de la aplicaci√≥n est√°n en
 /app
 
 Los modelos van en 
