@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-06-2011 a las 18:28:34
+-- Tiempo de generación: 19-06-2011 a las 19:47:07
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `grupos_usuarios_responsables` (
 DROP TABLE IF EXISTS `permisos`;
 CREATE TABLE IF NOT EXISTS `permisos` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(256) NOT NULL,
+  `permiso` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 

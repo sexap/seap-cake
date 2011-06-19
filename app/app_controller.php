@@ -38,7 +38,7 @@ class AppController extends Controller {
 		//Si los permisos no están en caché los generamos
 		if(!$this->Session->check('Permisos')){
 			$permisos = array();
-			//Permisos universales
+			//Todos necesitan poder salir
 			$permisos['usuarios']['logout'] = 1;
 			//Importar el modelo de usuario
 			App::import('Model', 'Usuario');
@@ -50,9 +50,8 @@ class AppController extends Controller {
 				$thisPermissions = $usuarioActual->Rol->find(array('Rol.id'=>$thisGroup['id']));
 				$thisPermissions = $thisPermissions['Permiso'];
 				foreach($thisPermissions as $thisPermission){
-					$aux = explode('.', low($thisPermission['nombre']));
-					if(count($aux) == 1) $permisos[$aux[0]] = 1;
-					else $permisos[$aux[0]][$aux[1]] = 1;
+					$aux = explode('.', low($thisPermission['permiso']));
+					$permisos[$aux[0]][$aux[1]] = 1;
 				}
 			}
 			//Guardar los permisos en caché
@@ -64,9 +63,11 @@ class AppController extends Controller {
 		}
 		
 		//Vemos si tiene permiso para la acción
-		if(isset($permisos['*'])) return true;
+		if(isset($permisos['*']['*'])) return true;
 		if(isset($permisos[$controlador]['*'])) return true;
+		if(isset($permisos['*'][$accion])) return true;
 		if(isset($permisos[$controlador][$accion])) return true;
+		//No tiene permisos
 		$this->Session->setFlash('No tienes permisos suficientes');
 		return false;
 	}
