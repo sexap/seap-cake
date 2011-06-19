@@ -1,6 +1,8 @@
 <?php
 class Usuario extends AppModel {
     var $name = 'Usuario';
+	var $displayField = 'nombre';
+	
 	var $hasMany = array('Problema', 'Envio', 'Comentario');
 	var $hasAndBelongsToMany = array(
 		'Rol',

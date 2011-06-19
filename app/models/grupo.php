@@ -1,6 +1,8 @@
 <?php
 class Grupo extends AppModel {
     var $name = 'Grupo';
+	var $displayField = 'nombre';
+	
 	var $belongsTo = 'Uea';
 	var $hasAndBelongsToMany = array(
 		'Actividad',
