@@ -6,6 +6,7 @@ class UsuariosController extends AppController {
 	function login(){
 	}
 	function logout(){
+		//Al salir, se borra la caché de permisos
 		$this->Session->delete('Permisos');
 		$this->redirect($this->Auth->logout());
 	}
