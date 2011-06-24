@@ -8,5 +8,11 @@ class Rol extends AppModel {
 	var $hasAndBelongsToMany = array('Usuario', 'Permiso');
 	
 	//Validación
+	var $validate = array(
+		'nombre' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Escriba el nombre del rol.'
+		)
+	);
 }
 ?>
