@@ -23,7 +23,7 @@ class Actividad extends AppModel {
 				'rule' => 'notEmpty',
 				'message' => 'Escriba el titulo de la actividad.'
 			)
-		)
+		),
 		'tema' => array(
 			'reglatema-1' => array(
 				'rule' => 'alphaNumeric',
@@ -37,7 +37,7 @@ class Actividad extends AppModel {
 				'rule' => 'notEmpty',
 				'message' => 'Escriba el tema de la actividad.'
 			)
-		)
+		),
 		'tema' => array(
 			'reglatema-1' => array(
 				'rule' => 'alphaNumeric',
@@ -51,7 +51,7 @@ class Actividad extends AppModel {
 				'rule' => 'notEmpty',
 				'message' => 'Escriba la descripcion de la actividad.'
 			)
-		)
+		),
 		'inicio' => array(
 			'reglainicio-1' => array(
 				'rule' => array('date','dmy'),
@@ -61,7 +61,7 @@ class Actividad extends AppModel {
 				'rule' => 'notEmpty',
 				'message' => 'Escriba la fecha de inicio de la actividad.'
 			)
-		)
+		),
 		'fin' => array(
 			'reglafin-1' => array(
 				'rule' => array('date','dmy'),
