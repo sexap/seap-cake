@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-06-2011 a las 19:47:07
+-- Tiempo de generación: 24-06-2011 a las 21:11:47
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -108,7 +108,7 @@ DROP TABLE IF EXISTS `grupos`;
 CREATE TABLE IF NOT EXISTS `grupos` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(512) NOT NULL,
-  `horario` varchar(512) NOT NULL,
+  `descripcion` text NOT NULL,
   `uea_id` int(32) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
@@ -244,4 +244,4 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `razon` varchar(2048) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mat_eco` (`mat_eco`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;

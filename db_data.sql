@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-06-2011 a las 18:28:50
+-- Tiempo de generación: 24-06-2011 a las 21:12:22
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -60,7 +60,7 @@ INSERT INTO `envios` (`id`, `problema_id`, `usuario_id`, `actividad_id`, `codigo
 -- Volcar la base de datos para la tabla `grupos`
 --
 
-INSERT INTO `grupos` (`id`, `nombre`, `horario`, `uea_id`) VALUES
+INSERT INTO `grupos` (`id`, `nombre`, `descripcion`, `uea_id`) VALUES
 (2, 'SAI-84', 'AsesorÃ­as: 11.30 - 13.00', 1),
 (3, 'CAT-09', 'Lunes, Miercoles y Viernes 7.00 - 8.30', 4);
 
@@ -78,11 +78,11 @@ INSERT INTO `grupos` (`id`, `nombre`, `horario`, `uea_id`) VALUES
 -- Volcar la base de datos para la tabla `permisos`
 --
 
-INSERT INTO `permisos` (`id`, `nombre`) VALUES
-(1, '*'),
+INSERT INTO `permisos` (`id`, `permiso`) VALUES
+(1, '*.*'),
 (4, 'actividades.*'),
 (3, 'problemas.*'),
-(5, 'grupos.index');
+(5, '*.index');
 
 --
 -- Volcar la base de datos para la tabla `permisos_roles`
@@ -119,7 +119,9 @@ INSERT INTO `roles_usuarios` (`rol_id`, `usuario_id`) VALUES
 (3, 4),
 (1, 2),
 (1, 3),
-(2, 1);
+(2, 1),
+(2, 2),
+(3, 2);
 
 --
 -- Volcar la base de datos para la tabla `ueas`
@@ -137,6 +139,6 @@ INSERT INTO `ueas` (`id`, `nombre`) VALUES
 
 INSERT INTO `usuarios` (`id`, `nombre`, `mat_eco`, `contrasena`, `car_depto`, `imagen`, `firma`, `correo`, `telefono`, `twitter`, `facebook`, `baneado`, `razon`) VALUES
 (1, 'Profesor X', 0, '8aefb06c426e07a0a671a1e2488b4858d694a730', 'Ing. ComputaciÃ³n', '', '', '', '', '', '', 0, ''),
-(2, 'Juan Perez', 208555666, 'b9c989e04e968069dec4399654f5dbaad8542840', 'SociologÃ­a', '', '', '', '', '', '', 0, ''),
+(2, 'Juan Perez', 555, 'cfa1150f1787186742a9a884b73a43d8cf219f9b', 'SociologÃ­a', '', '', '', '', '', '', 0, ''),
 (3, 'Maloso', 666, 'cd3f0c85b158c08a2b113464991810cf2cdfc387', '', '', '', '', '', '', '', 1, 'Por maloso'),
 (4, 'Super Admin', 1234, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '', '', '', '', '', 0, 'No estÃ¡ baneado. Esto se mostrarÃ¡ como una advertencia.');
