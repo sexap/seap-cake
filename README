@@ -1,3 +1,15 @@
+Observaciones de Rafael:
+
+1. Que feo es CakePHP. Grails pwnz.
+2. Considero que es mejor manejar la dificultad de los problemas como strings y no como números. Algo del tipo: "básico", "intermedio", "avanzado". Creo que seria modelado como están ahorita las UEA's.
+3. Me faltaron añadir acentos. No se bien que onda con la codificación de la Cake.
+4. En la validación del modelo de grupo, omití lo de horarios y use 'descripcion'. No se que cambios se deban de hacer en la bd o los controladores.
+5. Deje pendiente usuario, ya me dio sueño.
+6. zzzZzzzzZzzzzzzzz 
+
+[Rafael]
+---
+
 Quité del control de versiones los archivos temporales y de caché que genera cake. Tan sólo he dejado la estructura de carpetas para que todo pueda funcionar.
 
 ** No agregar ningún archivo de la carpeta /app/tmp **
