@@ -38,16 +38,16 @@ class Actividad extends AppModel {
 				'message' => 'Escriba el tema de la actividad.'
 			)
 		),
-		'tema' => array(
-			'reglatema-1' => array(
+		'descripcion' => array(
+			'regladescripcion-1' => array(
 				'rule' => 'alphaNumeric',
 				'message' => 'Solo se permiten letras y numeros en la descripcion de la actividad'
 			),
-			'reglatema-2' => array(
+			'regladescripcion-2' => array(
 				'rule' => array('maxLength', 50),
 				'message' => 'La descripcion de la actividad sobrepasa el limite de caracteres permitidos'
 			),
-			'reglatema-3' => array(
+			'regladescripcion-3' => array(
 				'rule' => 'notEmpty',
 				'message' => 'Escriba la descripcion de la actividad.'
 			)
