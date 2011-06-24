@@ -7,5 +7,11 @@ class Envio extends AppModel {
 	var $belongsTo = array('Problema', 'Usuario', 'Actividad');
 	
 	//validación
+	var $validate = array(
+		'codigo' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Escriba el codigo.'
+		)
+	);
 }
 ?>
