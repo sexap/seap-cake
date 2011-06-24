@@ -12,7 +12,7 @@ class Rol extends AppModel {
 		'nombre' => array(
 			'reglarol-1' => array(
 				'rule' => array('maxLength', 50),
-				'message' => 'El nombre del rol sobrepasa el limite de caracteres permitidos'
+				'message' => 'El nombre del rol sobrepasa el limite de caracteres permitidos.'
 			),
 			'reglanrol-2' => array(
 				'rule' => 'notEmpty',

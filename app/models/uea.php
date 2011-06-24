@@ -12,7 +12,7 @@ class Uea extends AppModel {
 		'nombre' => array(
 			'reglauea-1' => array(
 				'rule' => array('maxLength', 50),
-				'message' => 'El nombre de la UEA sobrepasa el limite de caracteres permitidos'
+				'message' => 'El nombre de la UEA sobrepasa el limite de caracteres permitidos.'
 			),
 			'reglanuea-2' => array(
 				'rule' => 'notEmpty',

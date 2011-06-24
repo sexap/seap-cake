@@ -11,7 +11,7 @@ class Comentario extends AppModel {
 		'mensaje' => array(
 			'reglamensaje-1' => array(
 				'rule' => array('maxLength', 1000),
-				'message' => 'El comentario sobrepasa el limite de caracteres permitidos'
+				'message' => 'El comentario sobrepasa el limite de caracteres permitidos.'
 			),
 			'reglamensaje-2' => array(
 				'rule' => 'notEmpty',

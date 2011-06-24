@@ -17,7 +17,7 @@ class Grupo extends AppModel {
 		'nombre' => array(
 			'reglanombre-1' => array(
 				'rule' => array('maxLength', 50),
-				'message' => 'El nombre del grupo sobrepasa el limite de caracteres permitidos'
+				'message' => 'El nombre del grupo sobrepasa el limite de caracteres permitidos.'
 			),
 			'reglanombre-2' => array(
 				'rule' => 'notEmpty',
@@ -27,7 +27,7 @@ class Grupo extends AppModel {
 		'descripcion' => array(
 			'regladescripcion-1' => array(
 				'rule' => array('maxLength', 500),
-				'message' => 'La descripcion del grupo sobrepasa el limite de caracteres permitidos'
+				'message' => 'La descripcion del grupo sobrepasa el limite de caracteres permitidos.'
 			),
 			'regladescripcion-2' => array(
 				'rule' => 'notEmpty',
