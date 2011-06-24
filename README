@@ -1,8 +1,17 @@
+- ¿Hacemos una Wiki?
+- Alphanumeric no admite espacios!
+- Las fechas no funcionan.
+
+[Ernesto]
+---
+
 Observaciones de Rafael:
 
 1. Que feo es CakePHP. Grails pwnz.
 2. Considero que es mejor manejar la dificultad de los problemas como strings y no como números. Algo del tipo: "básico", "intermedio", "avanzado". Creo que seria modelado como están ahorita las UEA's.
+- Eso se puede manejar desde la vista, independientemente de cómo se represente en la base de datos. Se puede crear una lista para seleccionar Fácil, Medio, Difícil en HTML y que tengan al valor que querramos. [Ernesto]
 3. Me faltaron añadir acentos. No se bien que onda con la codificación de la Cake.
+- UTF8. Archivos en UTF8. Cadenas en UTF8. BD en UTF8. Todo en UTF8. Es el futuro! [Ernesto]
 4. En la validación del modelo de grupo, omití lo de horarios y use 'descripcion'. No se que cambios se deban de hacer en la bd o los controladores.
 5. Deje pendiente usuario, ya me dio sueño.
 6. zzzZzzzzZzzzzzzzz 
