@@ -44,7 +44,7 @@ class Actividad extends AppModel {
 				'message' => 'Solo se permiten letras y numeros en la descripcion de la actividad'
 			),
 			'regladescripcion-2' => array(
-				'rule' => array('maxLength', 50),
+				'rule' => array('maxLength', 500),
 				'message' => 'La descripcion de la actividad sobrepasa el limite de caracteres permitidos'
 			),
 			'regladescripcion-3' => array(
