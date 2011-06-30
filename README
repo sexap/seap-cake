@@ -11,6 +11,10 @@ Si no se crea esta función, por defecto es como si siempre devolviera true.
 
 Lo voy a seguir revisando y probando pero creo que está bastante chido :)
 
+Edito: El unico detalle es que las acciones como ver, editar, eliminar deben ser de la forma
+	accion($id = null, otros parametros...)
+pero eso de por sí ya es así. Por lo demás todo debería seguir funcionando normal.
+
 [Ernesto]
 ---
 
