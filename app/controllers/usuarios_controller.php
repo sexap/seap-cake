@@ -1,14 +1,77 @@
 <?php
 class UsuariosController extends AppController {
+
 	var $name = 'Usuarios';
-	var $scaffold;
 	
 	function login(){
 	}
+	
 	function logout(){
-		//Al salir, se borra la caché de permisos
 		$this->Session->delete('Permisos');
 		$this->redirect($this->Auth->logout());
 	}
+
+	function index() {
+		$this->Usuario->recursive = 0;
+		$this->set('usuarios', $this->paginate());
+	}
+
+	function view($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid usuario', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->set('usuario', $this->Usuario->read(null, $id));
+	}
+
+	function add() {
+		if (!empty($this->data)) {
+			$this->Usuario->create();
+			if ($this->Usuario->save($this->data)) {
+				$this->Session->setFlash(__('The usuario has been saved', true));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
+			}
+		}
+		$integranteDes = $this->Usuario->IntegranteDe->find('list');
+		$responsableDes = $this->Usuario->ResponsableDe->find('list');
+		$roles = $this->Usuario->Rol->find('list');
+		$this->set(compact('integranteDes', 'responsableDes', 'roles'));
+	}
+
+	function edit($id = null) {
+		if (!$id && empty($this->data)) {
+			$this->Session->setFlash(__('Invalid usuario', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		if (!empty($this->data)) {
+			if ($this->Usuario->save($this->data)) {
+				$this->Session->setFlash(__('The usuario has been saved', true));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
+			}
+		}
+		if (empty($this->data)) {
+			$this->data = $this->Usuario->read(null, $id);
+		}
+		$integranteDes = $this->Usuario->IntegranteDe->find('list');
+		$responsableDes = $this->Usuario->ResponsableDe->find('list');
+		$roles = $this->Usuario->Rol->find('list');
+		$this->set(compact('integranteDes', 'responsableDes', 'roles'));
+	}
+
+	function delete($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid id for usuario', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		if ($this->Usuario->delete($id)) {
+			$this->Session->setFlash(__('Usuario deleted', true));
+			$this->redirect(array('action'=>'index'));
+		}
+		$this->Session->setFlash(__('Usuario was not deleted', true));
+		$this->redirect(array('action' => 'index'));
+	}
 }
-?>

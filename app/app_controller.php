@@ -20,7 +20,7 @@ class AppController extends Controller {
 		$this->Auth->logoutRedirect = '/';
 		$this->Auth->loginRedirect = '/';
 		$this->Auth->loginError = 'Usuario o contraseña incorrecta';
-		$this->Auth->authError = 'Para continuar debes ingresar';
+		$this->Auth->authError = 'No tienes permisos suficientes para continuar';
 		
 		//Autoriza todas las páginas estáticas
 		$this->Auth->allow('display');
@@ -84,7 +84,6 @@ class AppController extends Controller {
 		if(isset($permisos['*'][$accion])) return true;
 		if(isset($permisos[$controlador][$accion])) return true;
 		//No tiene permisos
-		//$this->Session->setFlash($this->Auth->loginError, 'default', array(), 'auth');
 		return false;
 	}
 	
