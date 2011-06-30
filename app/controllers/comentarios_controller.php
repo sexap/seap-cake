@@ -2,7 +2,14 @@
 class ComentariosController extends AppController {
 
 	var $name = 'Comentarios';
-
+	
+	function __esAutor($user_id, $id){
+		$opciones['conditions'] = array('Comentario.id' => $id);
+		$opciones['fields'] = array('usuario_id');
+		$resultado = $this->Comentario->find('first', $opciones);
+		return ($resultado['Comentario']['usuario_id'] == $user_id);
+	}
+	
 	function index() {
 		$this->Comentario->recursive = 0;
 		$this->set('comentarios', $this->paginate());

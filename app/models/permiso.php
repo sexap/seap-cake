@@ -10,7 +10,11 @@ class Permiso extends AppModel {
 	//Validación
 	var $validate = array(
 		'permiso' => array(
-			//Expresión regular acepta dos palabras (sólo letras o bien un asterisco) separadas por un punto
+			/*
+			Expresión regular que acepta controlador.acción[.alcance]
+			controlador y acción pueden ser un comodín '*'
+			alcance es opcional y puede ser 'todo' o bien 'autor'
+			*/
 			'rule' => '/^([a-z]+|\*)\.([a-z]+|\*)(\.(todo|autor))?$/i',
 			'message' => 'Un permiso debe ser de la forma controlador.acción.'
 		)

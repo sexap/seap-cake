@@ -35,17 +35,26 @@ class AppController extends Controller {
 	}
 	
 	//Es llamada por el módulo Auth para decidir si el usuario puede accesar o no al elemento solicitado
+	//Para algunos controladores en que haya que validar autor esto debe ser sobreescrito
 	function isAuthorized(){
-		/*** Elementos configurables ***/
-		//En caso de duda ¿dejar pasar?
-		$respuestaDefault = true;
-		//Controladores en los que no aplica autoría. Responde con respuestaDefault
-		$sinAutor = array('permisos', 'roles', 'ueas');
+		$permiso= $this->__alcancePermiso();
+		if($permiso == '') return false;
+		if($permiso == 'todo') return true;
+		if($permiso == 'autor') return ($this->__esAutor($this->Auth->user('id'), $this->params['pass'][0]));
+	}
 	
+	//Por default si la clase hija no cuenta con esta función
+	function __esAutor($user_id, $id){
+		return true;
+	}
+	
+	//Función privada que devuelve el máximo alcance que se tiene sobre la acción
+	function __alcancePermiso(){		
+		//Obtiene datos
 		$controlador = low($this->name);
 		$accion = low($this->action);
 		
-		//Si los permisos *no* están en caché son generados
+		//Si los permisos *no* están en caché, son generados
 		if(!$this->Session->check('Permisos')){		
 			//Importar el modelo de permisos
 			App::import('Model', 'Permiso');
@@ -82,7 +91,7 @@ class AppController extends Controller {
 			//Guardar los permisos en caché
 			$this->Session->write('Permisos',$permisos);			
 		}
-		//Ya han sido generados
+		//Ye están en chache
 		else{
 			$permisos = $this->Session->read('Permisos');
 		}
@@ -94,20 +103,7 @@ class AppController extends Controller {
 		if(isset($permisos['*'][$accion])) $permisoEfectivo = max($permisos['*'][$accion], $permisoEfectivo);
 		if(isset($permisos[$controlador][$accion])) $permisoEfectivo = max($permisos[$controlador][$accion], $permisoEfectivo);
 		
-		print $permisoEfectivo; ////!!!!!!!!!!!!!!!!!!!!!!!!
-		//No tiene permiso
-		if($permisoEfectivo == '') return false;
-		//Tiene permiso sobre todos los elementos
-		if($permisoEfectivo == 'todo') return true;
-		//Tiene permisos de autor
-		if($permisoEfectivo == 'autor'){
-			//Hay modelos que no tienen autor. Ignora lo de autor y responde respuestaDefault
-			if(in_array($controlador, $sinAutor)) return $respuestaDefault;
-			//Asumimos que el primer parametro es el id, si no hay id responde respuestaDefault
-			if(isset($this->params['pass'][0])) $id = $this->params['pass'][0];
-			else return $respuestaDefault;
-			//Verificamos quien es el autor
-		}
+		return $permisoEfectivo;
 	}
 	
 }
