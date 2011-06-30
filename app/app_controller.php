@@ -25,8 +25,6 @@ class AppController extends Controller {
 		//Autoriza todas las páginas estáticas
 		$this->Auth->allow('display');
 		
-		print_r($this->params['pass']); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		
 		//Si el usuario está baneado lo lleva a una página de advertencia (a menos que ya está ahí o vaya a salir)
 		if($this->Auth->user('baneado') == 1 and $this->params['url']['url'] != 'pages/ban' and $this->params['url']['url'] != 'usuarios/logout'){
 			$this->redirect('/pages/ban');
@@ -35,7 +33,7 @@ class AppController extends Controller {
 	}
 	
 	//Es llamada por el módulo Auth para decidir si el usuario puede accesar o no al elemento solicitado
-	//Para algunos controladores en que haya que validar autor esto debe ser sobreescrito
+	//Devuelve true si el usuario es autorizado, false en caso contrario
 	function isAuthorized(){
 		$permiso= $this->__alcancePermiso();
 		if($permiso == '') return false;
@@ -43,12 +41,15 @@ class AppController extends Controller {
 		if($permiso == 'autor') return ($this->__esAutor($this->Auth->user('id'), $this->params['pass'][0]));
 	}
 	
-	//Por default si la clase hija no cuenta con esta función
+	//Es llamada por isAuthorized. Es privada
+	//Devuelve true si el usuario $user_id es dueño del componente $id
+	//Debe ser sobreescrita por los controladores que lo requieran
 	function __esAutor($user_id, $id){
 		return true;
 	}
 	
-	//Función privada que devuelve el máximo alcance que se tiene sobre la acción
+	//Es llamada por isAuthorized. Es privada
+	//Devuelve una cadena que indica el máximo alcance que se tiene con la accion actualmente solicitada
 	function __alcancePermiso(){		
 		//Obtiene datos
 		$controlador = low($this->name);
@@ -91,7 +92,7 @@ class AppController extends Controller {
 			//Guardar los permisos en caché
 			$this->Session->write('Permisos',$permisos);			
 		}
-		//Ye están en chache
+		//Ya están en chache
 		else{
 			$permisos = $this->Session->read('Permisos');
 		}

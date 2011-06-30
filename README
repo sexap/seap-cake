@@ -1,3 +1,19 @@
+Ya están los permisos listos.
+Los permisos se asignan sobre las acciones de un controlador.
+Para cada acción hay tres 'alcances' de permisos:
+	- todo. la acción es autorizada sobre cualquier elemento
+	- sin permiso. la acción siempre es negada
+	- autor. la acción es autorizada sólo si el usuario loggeado es autor del elemento
+Para que el controlador de permisos sepa quien es el autor hay que crear una función en cada controlador que lo requiera
+	__esAutor($usuario_id, $id)
+que debe devuelve true si el usuario es autor del elemento.
+Si no se crea esta función, por defecto es como si siempre devolviera true.
+
+Lo voy a seguir revisando y probando pero creo que está bastante chido :)
+
+[Ernesto]
+---
+
 - ¿Hacemos una Wiki?
 - Alphanumeric no admite espacios!
 - Las fechas no funcionan.
