@@ -80,6 +80,7 @@ class AppController extends Controller {
 				)
 			);
 			$opciones['conditions'] = array('RolesUsuarios.usuario_id' => $this->Auth->user('id'));
+			$opciones['recursive'] = -1;
 			$opciones['fields'] = array('DISTINCT permiso');
 			$tabla = $modeloPermiso->find('all', $opciones);
 			

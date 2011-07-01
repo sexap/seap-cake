@@ -2,6 +2,21 @@
 class GruposController extends AppController {
 
 	var $name = 'Grupos';
+	
+	function _esAutor($user_id, $id){
+		$opciones['joins'] = array(
+			array(
+				'table' => 'grupos_usuarios_responsables',
+				'alias' => 'Responsables',
+				'type' => 'inner',
+				'conditions' => array('Grupo.id = Responsables.grupo_id')
+			)
+		);
+		$opciones['conditions'] = array('Grupo.id' => $id, 'Responsables.usuario_id' => $user_id);
+		$opciones['recursive'] = -1;
+		$resultado = $this->Grupo->find('count', $opciones);
+		return ($resultado == 1);
+	}
 
 	function index() {
 		$this->Grupo->recursive = 0;
