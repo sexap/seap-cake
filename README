@@ -3,9 +3,10 @@ Los permisos se asignan sobre las acciones de un controlador.
 Para cada acción hay tres 'alcances' de permisos:
 	- todo. la acción es autorizada sobre cualquier elemento
 	- sin permiso. la acción siempre es negada
-	- autor. la acción es autorizada sólo si el usuario loggeado es autor del elemento
+	- autor. la acción es autorizada sólo si el usuario loggeado es autor del elemento.
+		si el máximo alcance es autor, pero la acción o el elemento no cuenta con datos de autor, el alcance equivale a todo. (o podría equivaler a sin permiso)
 Para que el controlador de permisos sepa quien es el autor hay que crear una función en cada controlador que lo requiera
-	__esAutor($usuario_id, $id)
+	_esAutor($usuario_id, $id)
 que debe devuelve true si el usuario es autor del elemento.
 Si no se crea esta función, por defecto es como si siempre devolviera true.
 

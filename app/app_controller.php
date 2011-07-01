@@ -35,25 +35,28 @@ class AppController extends Controller {
 	//Es llamada por el módulo Auth para decidir si el usuario puede accesar o no al elemento solicitado
 	//Devuelve true si el usuario es autorizado, false en caso contrario
 	function isAuthorized(){
-		$permiso= $this->__alcancePermiso();
+		$permiso= $this->__alcancePermiso($this->name, $this->action);
 		if($permiso == '') return false;
 		if($permiso == 'todo') return true;
-		if($permiso == 'autor') return ($this->__esAutor($this->Auth->user('id'), $this->params['pass'][0]));
+		if($permiso == 'autor'){
+			if(isset($this->params['pass'][0])) return ($this->_esAutor($this->Auth->user('id'), $this->params['pass'][0]));
+			else return true;
+			}
 	}
 	
-	//Es llamada por isAuthorized. Es privada
+	//Es llamada por isAuthorized. Es protegida
 	//Devuelve true si el usuario $user_id es dueño del componente $id
 	//Debe ser sobreescrita por los controladores que lo requieran
-	function __esAutor($user_id, $id){
+	function _esAutor($user_id, $id){
 		return true;
 	}
 	
 	//Es llamada por isAuthorized. Es privada
 	//Devuelve una cadena que indica el máximo alcance que se tiene con la accion actualmente solicitada
-	function __alcancePermiso(){		
+	function __alcancePermiso($controlador, $accion){		
 		//Obtiene datos
-		$controlador = low($this->name);
-		$accion = low($this->action);
+		$controlador = low($controlador);
+		$accion = low($accion);
 		
 		//Si los permisos *no* están en caché, son generados
 		if(!$this->Session->check('Permisos')){		

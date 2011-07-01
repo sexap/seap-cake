@@ -3,9 +3,10 @@ class ComentariosController extends AppController {
 
 	var $name = 'Comentarios';
 	
-	function __esAutor($user_id, $id){
+	function _esAutor($user_id, $id){
 		$opciones['conditions'] = array('Comentario.id' => $id);
-		$opciones['fields'] = array('usuario_id');
+		$opciones['fields'] = array('Comentario.usuario_id');
+		$opciones['recursive'] = -1;
 		$resultado = $this->Comentario->find('first', $opciones);
 		return ($resultado['Comentario']['usuario_id'] == $user_id);
 	}

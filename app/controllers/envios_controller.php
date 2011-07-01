@@ -2,6 +2,14 @@
 class EnviosController extends AppController {
 
 	var $name = 'Envios';
+	
+	function _esAutor($user_id, $id){
+		$opciones['conditions'] = array('Envio.id' => $id);
+		$opciones['fields'] = array('Envio.usuario_id');
+		$opciones['recursive'] = -1;
+		$resultado = $this->Envio->find('first', $opciones);
+		return ($resultado['Envio']['usuario_id'] == $user_id);
+	}
 
 	function index() {
 		$this->Envio->recursive = 0;

@@ -2,7 +2,15 @@
 class ProblemasController extends AppController {
 
 	var $name = 'Problemas';
-
+	
+	function _esAutor($user_id, $id){
+		$opciones['conditions'] = array('Problema.id' => $id);
+		$opciones['fields'] = array('Problema.usuario_id');
+		$opciones['recursive'] = -1;
+		$resultado = $this->Problema->find('first', $opciones);
+		return ($resultado['Problema']['usuario_id'] == $user_id);
+	}
+	
 	function index() {
 		$this->Problema->recursive = 0;
 		$this->set('problemas', $this->paginate());
