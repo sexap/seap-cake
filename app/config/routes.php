@@ -31,3 +31,9 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+
+//Rutas personalizadas
+Router::connect('/:controller/nuevo', array('action' => 'add'));
+Router::connect('/:controller/ver/*', array('action' => 'view'));
+Router::connect('/:controller/editar/*', array('action' => 'edit'));
+Router::connect('/:controller/borrar/*', array('action' => 'delete'));

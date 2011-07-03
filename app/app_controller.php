@@ -26,8 +26,11 @@ class AppController extends Controller {
 		$this->Auth->allow('display');
 		
 		//Si el usuario está baneado lo lleva a una página de advertencia (a menos que ya está ahí o vaya a salir)
-		if($this->Auth->user('baneado') == 1 and $this->params['url']['url'] != 'pages/ban' and $this->params['url']['url'] != 'usuarios/logout'){
-			$this->redirect('/pages/ban');
+		$destino = $this->params['controller'].'/'.$this->params['action'];
+		if(isset($this->params['pass'][0])) $destino .= '/'.$this->params['pass'][0];
+		
+		if($this->Auth->user('baneado') == 1 and $destino != 'pages/display/ban' and $destino != 'usuarios/logout'){
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'ban'));
 			exit();
 		}
 	}
