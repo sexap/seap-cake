@@ -4,11 +4,7 @@ class UsuariosController extends AppController {
 	var $name = 'Usuarios';
 	
 	function _esAutor($user_id, $id){
-		$opciones['conditions'] = array('Usuario.id' => $id);
-		$opciones['fields'] = array('Usuario.id');
-		$opciones['recursive'] = -1;
-		$resultado = $this->Usuario->find('first', $opciones);
-		return ($resultado['Usuario']['id'] == $user_id);
+		return ($id == $user_id);
 	}
 	
 	function login(){
