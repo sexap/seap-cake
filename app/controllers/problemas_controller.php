@@ -4,11 +4,10 @@ class ProblemasController extends AppController {
 	var $name = 'Problemas';
 	
 	function _esAutor($user_id, $id){
-		$opciones['conditions'] = array('Problema.id' => $id);
-		$opciones['fields'] = array('Problema.usuario_id');
+		$opciones['conditions'] = array('Problema.id' => $id, 'Problema.usuario_id' => $user_id);
 		$opciones['recursive'] = -1;
-		$resultado = $this->Problema->find('first', $opciones);
-		return ($resultado['Problema']['usuario_id'] == $user_id);
+		$resultado = $this->Problema->find('count', $opciones);
+		return ($resultado == 1);
 	}
 	
 	function index() {
