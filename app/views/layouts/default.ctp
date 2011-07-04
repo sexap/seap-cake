@@ -22,22 +22,32 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php __('CakePHP: the rapid development php framework:'); ?>
+		<?php echo 'SEAP ' ?>
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
+		echo $this->Html->css('seap');
 		echo $scripts_for_layout;
 	?>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link(__('CakePHP: the rapid development php framework', true), 'http://cakephp.org'); ?></h1>
+			[Nuestra foto aquí]
 		</div>
+		<div id="menu">
+			<ul>
+				<?php echo $html->link('Inicio', '/')?> | 
+				<?php echo $html->link('Problemas',array('controller' => 'problemas'))?>  | 
+				<?php echo $html->link('Actividades',array('controller' => 'actividades'))?>  | 
+				<?php echo $html->link('Grupos',array('controller' => 'grupos'))?>  | 
+				<?php echo $html->link('Roles',array('controller' => 'roles'))?>  | 
+				<?php echo $html->link('Usuarios',array('controller' => 'usuarios'))?>  | 
+				<?php echo $html->link('UEAs',array('controller' => 'ueas'))?>
+			</ul>
+		</div>
+		<div id="wrapper">
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
@@ -46,13 +56,23 @@
 			<?php echo $content_for_layout; ?>
 
 		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt'=> __('CakePHP: the rapid development php framework', true), 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
+		</div>
+		<div id="user_info">
+			[Aqui información del usuario] <br/> <br/>
+			<?php
+				if($this->Session->read('Auth.Usuario.nombre')){
+					echo $this->Session->read('Auth.Usuario.nombre').'<br/>';
+					echo $this->Html->link('Salir', array('controller' => 'usuarios', 'action' => 'logout'));
+				}
+				else {
+					echo $this->Html->link('Entrar', array('controller' => 'usuarios', 'action' => 'login'));
+				}
 			?>
+		</div>
+		<div id="footer">
+			Sistema de Evaluación Automática de Programas <br/>
+			<?php echo $this->Html->link('CakePHP: the rapid development php framework', 'http://cakephp.org'); ?> | 
+			<?php echo $this->Html->link('Silk Icons', 'http://www.famfamfam.com/lab/icons/silk/'); ?>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
