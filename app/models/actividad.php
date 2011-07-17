@@ -11,32 +11,32 @@ class Actividad extends AppModel {
 	//Validación
 	var $validate = array(
 		'titulo' => array(
-			'reglatitulo-1' => array(
-				'rule' => 'alphaNumeric',
-				'message' => 'Solo se permiten letras y numeros en el titulo de la actividad.'
-			),
-			'reglatitulo-2' => array(
-				'rule' => array('maxLength', 100),
-				'message' => 'El titulo de la actividad sobrepasa el limite de caracteres permitidos.'
-			),
-			'reglatitulo-3' => array(
+			//'reglatitulo-1' => array(
+			//	'rule' => 'alphaNumeric',
+			//	'message' => 'Solo se permiten letras y numeros en el titulo de la actividad.'
+			//),
+			//'reglatitulo-2' => array(
+			//	'rule' => array('maxLength', 100),
+			//	'message' => 'El titulo de la actividad sobrepasa el limite de caracteres permitidos.'
+			//),
+			//'reglatitulo-3' => array(
 				'rule' => 'notEmpty',
 				'message' => 'Escriba el titulo de la actividad.'
-			)
+			//)
 		),
 		'tema' => array(
-			'reglatema-1' => array(
-				'rule' => 'alphaNumeric',
-				'message' => 'Solo se permiten letras y numeros en el tema de la actividad.'
-			),
-			'reglatema-2' => array(
-				'rule' => array('maxLength', 50),
-				'message' => 'El tema de la actividad sobrepasa el limite de caracteres permitidos.'
-			),
-			'reglatema-3' => array(
+			//'reglatema-1' => array(
+			//	'rule' => 'alphaNumeric',
+			//	'message' => 'Solo se permiten letras y numeros en el tema de la actividad.'
+			//),
+			//'reglatema-2' => array(
+			//	'rule' => array('maxLength', 50),
+			//	'message' => 'El tema de la actividad sobrepasa el limite de caracteres permitidos.'
+			//),
+			//'reglatema-3' => array(
 				'rule' => 'notEmpty',
 				'message' => 'Escriba el tema de la actividad.'
-			)
+			//)
 		),
 		'descripcion' => array(
 			'regladescripcion-1' => array(
@@ -52,6 +52,9 @@ class Actividad extends AppModel {
 				'message' => 'Escriba la descripcion de la actividad.'
 			)
 		),
+
+                //No sé como vas a manejar esta parte de las fechas... si se pondrá en automático la fecha del mismo día
+                //para la fecha de inicio o que pex...
 		'inicio' => array(
 			'reglainicio-1' => array(
 				'rule' => array('date','dmy'),
