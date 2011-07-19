@@ -6,6 +6,11 @@
 			<?php echo $actividad['Actividad']['id']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Usuario'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $this->Html->link($actividad['Usuario']['nombre'], array('controller' => 'usuarios', 'action' => 'view', $actividad['Usuario']['id'])); ?>
+			&nbsp;
+		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Titulo'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $actividad['Actividad']['titulo']; ?>
@@ -40,6 +45,8 @@
 		<li><?php echo $this->Html->link(__('Delete Actividad', true), array('action' => 'delete', $actividad['Actividad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $actividad['Actividad']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Actividades', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Actividad', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Usuarios', true), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Usuario', true), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Envios', true), array('controller' => 'envios', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Envio', true), array('controller' => 'envios', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Grupos', true), array('controller' => 'grupos', 'action' => 'index')); ?> </li>

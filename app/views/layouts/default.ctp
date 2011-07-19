@@ -34,7 +34,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			[Nuestra foto aquí]
+			SEAP
 		</div>
 		<div id="menu">
 			<ul>
@@ -44,10 +44,17 @@
 				<?php echo $html->link('Grupos',array('controller' => 'grupos'))?>  | 
 				<?php echo $html->link('Roles',array('controller' => 'roles'))?>  | 
 				<?php echo $html->link('Usuarios',array('controller' => 'usuarios'))?>  | 
-				<?php echo $html->link('UEAs',array('controller' => 'ueas'))?>
+				<?php echo $html->link('UEAs',array('controller' => 'ueas'))?> |
+				<?php if($this->Session->read('Auth.Usuario.nombre')){
+					echo 'Ver perfil: ' . $this->Session->read('Auth.Usuario.nombre') . ' | ';
+					echo $this->Html->link('Salir', array('controller' => 'usuarios', 'action' => 'logout'));
+				}
+				else {
+					echo $this->Html->link('Entrar', array('controller' => 'usuarios', 'action' => 'login'));
+				}
+				?>
 			</ul>
 		</div>
-		<div id="wrapper">
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
@@ -55,19 +62,6 @@
 
 			<?php echo $content_for_layout; ?>
 
-		</div>
-		</div>
-		<div id="user_info">
-			[Aqui información del usuario] <br/> <br/>
-			<?php
-				if($this->Session->read('Auth.Usuario.nombre')){
-					echo $this->Session->read('Auth.Usuario.nombre').'<br/>';
-					echo $this->Html->link('Salir', array('controller' => 'usuarios', 'action' => 'logout'));
-				}
-				else {
-					echo $this->Html->link('Entrar', array('controller' => 'usuarios', 'action' => 'login'));
-				}
-			?>
 		</div>
 		<div id="footer">
 			Sistema de Evaluación Automática de Programas <br/>

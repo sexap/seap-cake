@@ -2,6 +2,13 @@
 class ActividadesController extends AppController {
 
 	var $name = 'Actividades';
+	
+	function _esAutor($user_id, $id){
+		$opciones['conditions'] = array('Actividad.id' => $id, 'Actividad.usuario_id' => $user_id);
+		$opciones['recursive'] = -1;
+		$resultado = $this->Actividad->find('count', $opciones);
+		return ($resultado == 1);
+	}
 
 	function index() {
 		$this->Actividad->recursive = 0;
@@ -28,7 +35,8 @@ class ActividadesController extends AppController {
 		}
 		$grupos = $this->Actividad->Grupo->find('list');
 		$problemas = $this->Actividad->Problema->find('list');
-		$this->set(compact('grupos', 'problemas'));
+		$usuarios = $this->Actividad->Usuario->find('list');
+		$this->set(compact('grupos', 'problemas', 'usuarios'));
 	}
 
 	function edit($id = null) {
@@ -49,7 +57,8 @@ class ActividadesController extends AppController {
 		}
 		$grupos = $this->Actividad->Grupo->find('list');
 		$problemas = $this->Actividad->Problema->find('list');
-		$this->set(compact('grupos', 'problemas'));
+		$usuarios = $this->Actividad->Usuario->find('list');
+		$this->set(compact('grupos', 'problemas', 'usuarios'));
 	}
 
 	function delete($id = null) {

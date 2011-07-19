@@ -5,8 +5,9 @@ class Actividad extends AppModel {
 	var $displayField = 'titulo';
 	
 	//Relaciones
-	var $hasAndBelongsToMany = array('Grupo', 'Problema');
+	var $hasAndBelongsToMany = array('Problema', 'Grupo');
 	var $hasMany = 'Envio';
+	var $belongsTo = 'Usuario';
 	
 	//Validación
 	var $validate = array(

@@ -3,6 +3,7 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('usuario_id');?></th>
 			<th><?php echo $this->Paginator->sort('titulo');?></th>
 			<th><?php echo $this->Paginator->sort('tema');?></th>
 			<th><?php echo $this->Paginator->sort('descripcion');?></th>
@@ -20,6 +21,9 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $actividad['Actividad']['id']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($actividad['Usuario']['nombre'], array('controller' => 'usuarios', 'action' => 'view', $actividad['Usuario']['id'])); ?>
+		</td>
 		<td><?php echo $actividad['Actividad']['titulo']; ?>&nbsp;</td>
 		<td><?php echo $actividad['Actividad']['tema']; ?>&nbsp;</td>
 		<td><?php echo $actividad['Actividad']['descripcion']; ?>&nbsp;</td>
@@ -51,6 +55,8 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Actividad', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Usuarios', true), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Usuario', true), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Envios', true), array('controller' => 'envios', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Envio', true), array('controller' => 'envios', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Grupos', true), array('controller' => 'grupos', 'action' => 'index')); ?> </li>

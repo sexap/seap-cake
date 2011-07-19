@@ -5,7 +5,7 @@ class Usuario extends AppModel {
 	var $displayField = 'nombre';
 	
 	//Relaciones
-	var $hasMany = array('Problema', 'Envio', 'Comentario');
+	var $hasMany = array('Problema', 'Envio', 'Comentario', 'Actividad');
 	var $hasAndBelongsToMany = array(
 		'Rol',
 		'IntegranteDe' => array('className' => 'Grupo', 'joinTable' => 'grupos_usuarios_miembros'),

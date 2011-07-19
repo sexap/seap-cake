@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-06-2011 a las 21:11:47
+-- Tiempo de generación: 19-07-2011 a las 20:35:55
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -28,13 +28,14 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 DROP TABLE IF EXISTS `actividades`;
 CREATE TABLE IF NOT EXISTS `actividades` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
+  `usuario_id` int(32) unsigned NOT NULL,
   `titulo` varchar(512) NOT NULL,
   `tema` varchar(512) NOT NULL,
   `descripcion` text NOT NULL,
   `inicio` datetime NOT NULL,
   `fin` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `envios` (
   `veredicto` varchar(16) NOT NULL,
   `puntaje` int(8) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
   `permiso` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 -- --------------------------------------------------------
 
@@ -181,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `problemas` (
   `uea_id` int(32) NOT NULL,
   `usuario_id` int(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -194,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 

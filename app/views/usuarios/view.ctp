@@ -81,6 +81,8 @@
 		<li><?php echo $this->Html->link(__('New Envio', true), array('controller' => 'envios', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Comentarios', true), array('controller' => 'comentarios', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Comentario', true), array('controller' => 'comentarios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Actividades', true), array('controller' => 'actividades', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Actividad', true), array('controller' => 'actividades', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Grupos', true), array('controller' => 'grupos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Integrante De', true), array('controller' => 'grupos', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Roles', true), array('controller' => 'roles', 'action' => 'index')); ?> </li>
@@ -232,6 +234,52 @@
 	<div class="actions">
 		<ul>
 			<li><?php echo $this->Html->link(__('New Comentario', true), array('controller' => 'comentarios', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php __('Related Actividades');?></h3>
+	<?php if (!empty($usuario['Actividad'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Usuario Id'); ?></th>
+		<th><?php __('Titulo'); ?></th>
+		<th><?php __('Tema'); ?></th>
+		<th><?php __('Descripcion'); ?></th>
+		<th><?php __('Inicio'); ?></th>
+		<th><?php __('Fin'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($usuario['Actividad'] as $actividad):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $actividad['id'];?></td>
+			<td><?php echo $actividad['usuario_id'];?></td>
+			<td><?php echo $actividad['titulo'];?></td>
+			<td><?php echo $actividad['tema'];?></td>
+			<td><?php echo $actividad['descripcion'];?></td>
+			<td><?php echo $actividad['inicio'];?></td>
+			<td><?php echo $actividad['fin'];?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View', true), array('controller' => 'actividades', 'action' => 'view', $actividad['id'])); ?>
+				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'actividades', 'action' => 'edit', $actividad['id'])); ?>
+				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'actividades', 'action' => 'delete', $actividad['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $actividad['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Actividad', true), array('controller' => 'actividades', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>

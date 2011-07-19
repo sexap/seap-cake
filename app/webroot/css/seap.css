@@ -8,6 +8,7 @@ body {
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:100%;
 	margin: 0;
+	background: #FFF6E6;
 }
 a {
 	text-decoration: underline;
@@ -52,44 +53,29 @@ ul, li {
 	text-align: left;
 	margin: 20px;
 }
-#wrapper{
-	background: #FFD;
-	float:left;
-	width:100%;
-}
-
 #header{
-	height: 100px;
-	background: #88D;
+	background: #000;
+	color: #FFF;
+	padding: 20px 30px;
+	font-weight: bold;
+	font-size: 300%;
+	letter-spacing: 15px;
 }
 #menu{
-	background: #888;
+	background: #670000;
 	text-align: center;
 	padding: 5px 0;
 }
-#menu a{
-	font-weight: bold;
-}
 #content{
-	background: #DDD;
-	clear: both;
-	color: #333;
-	margin-right: 200px;
-	padding: 5px;
+	background: #FFF;
+	padding: 15px;
 	overflow: auto;
 }
-#user_info{
-	float:left;
-	width:200px;
-	margin-left:-200px;
-}
 #footer {
-	clear: both;
+	background: #670000;
 	padding: 6px 10px;
 	text-align: center;
 	font-size:70%;
-	color: #666;
-	background: #CCC;
 }
 
 /** containers **/
