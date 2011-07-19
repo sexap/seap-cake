@@ -50,8 +50,7 @@ ul, li {
 /** Layout **/
 #container {
 	text-align: left;
-	width: 95%;
-	margin: 15px auto;
+	margin: 20px;
 }
 #wrapper{
 	background: #FFD;
