@@ -46,7 +46,7 @@
 				<li><?php echo $html->link('Usuarios',array('controller' => 'usuarios'), array('class' => 'usuarios'))?></li>
 				<li class="corner_right"><?php echo $html->link('UEAs',array('controller' => 'ueas'), array('class' => 'ueas'))?></li>
 				<?php if($this->Session->read('Auth.Usuario.nombre')){
-					echo '<li class="corner_left">'.$this->Html->link('Perfil', array('controller' => 'usuarios', 'action' => 'view', $this->Session->read('Auth.Usuario.id')), array('class' => 'perfil')).'</li>';
+					echo '<li class="corner_left">'.$this->Html->link('Mi perfil', array('controller' => 'usuarios', 'action' => 'view', $this->Session->read('Auth.Usuario.id')), array('class' => 'perfil')).'</li>';
 					echo '<li class="corner_right">'.$this->Html->link('Salir', array('controller' => 'usuarios', 'action' => 'logout'), array('class' => 'logout')).'</li>';
 				}
 				else {
