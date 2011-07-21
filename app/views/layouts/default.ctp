@@ -34,7 +34,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			SEAP
+			<?php echo $html->image('logo_uam.gif', array('alt' => 'UAM')); ?>
 		</div>
 		<div id="menu">
 			<ul>
