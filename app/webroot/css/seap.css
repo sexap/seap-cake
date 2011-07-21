@@ -4,8 +4,8 @@
 	padding:0;
 }
 body {
-	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
-	font-size:100%;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 100%;
 	margin: 0;
 	background: #FFE6ED;
 	color: #000;
@@ -36,10 +36,9 @@ a:visited {
 	padding: 16px;
 }
 #menu{
+	padding-top: 12px;
+	height: 23px;
 	background: #98003E;
-	color: #FFF;
-	text-align: center;
-	padding: 5px 0;
 }
 #content{
 	background: #FFF;
@@ -48,8 +47,76 @@ a:visited {
 }
 #footer {
 	background: #98003E;
-	color: #FFE6ED;
+	color: #FFF;
 	padding: 6px 10px;
 	text-align: center;
-	font-size:70%;
+	font-size: 75%;
+}
+
+/** Adicionales a layout **/
+#menu ul {
+	list-style: none;
+}
+#menu li {
+	padding: 4px 6px 0 6px;
+	margin-right: 1px;
+	display: block;
+	float: left;
+	background: #FFF;
+}
+#menu li:hover{
+	background: #F1AAC7;
+}
+#menu a{
+	height: 16px;
+	padding: 0 0 0 22px;
+	color: #98003E;
+	text-decoration: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+}
+#menu .inicio {
+	background-image: url(/sexap/icons/house.png);
+}
+#menu .problemas {
+	background-image: url(/sexap/icons/cog.png);
+}
+#menu .actividades {
+	background-image: url(/sexap/icons/folder_gear.png);
+}
+#menu .grupos {
+	background-image: url(/sexap/icons/folder_user.png);
+}
+#menu .roles {
+	background-image: url(/sexap/icons/lock.png);
+}
+#menu .usuarios {
+	background-image: url(/sexap/icons/group.png);
+}
+#menu .ueas {
+	background-image: url(/sexap/icons/report.png);
+}
+#menu .perfil {
+	background-image: url(/sexap/icons/vcard.png);
+}
+#menu .registro{
+	background-image: url(/sexap/icons/user_add.png);
+}
+#menu .logout {
+	background-image: url(/sexap/icons/door_in.png);
+}
+#menu .login {
+	background-image: url(/sexap/icons/key.png);
+}
+#menu .corner_left {
+	-moz-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	margin-left: 15px;
+}
+#menu .corner_right {
+	-moz-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#footer a {
+	color: #64A2FF;
 }

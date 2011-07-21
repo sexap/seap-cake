@@ -38,23 +38,25 @@
 		</div>
 		<div id="menu">
 			<ul>
-				<?php echo $html->link('Inicio', '/')?> | 
-				<?php echo $html->link('Problemas',array('controller' => 'problemas'))?>  | 
-				<?php echo $html->link('Actividades',array('controller' => 'actividades'))?>  | 
-				<?php echo $html->link('Grupos',array('controller' => 'grupos'))?>  | 
-				<?php echo $html->link('Roles',array('controller' => 'roles'))?>  | 
-				<?php echo $html->link('Usuarios',array('controller' => 'usuarios'))?>  | 
-				<?php echo $html->link('UEAs',array('controller' => 'ueas'))?> |
+				<li class="corner_left"><?php echo $html->link('Inicio', '/', array('class' => 'inicio'))?></li>
+				<li><?php echo $html->link('Problemas',array('controller' => 'problemas'), array('class' => 'problemas'))?></li>
+				<li><?php echo $html->link('Actividades',array('controller' => 'actividades'), array('class' => 'actividades'))?></li>
+				<li><?php echo $html->link('Grupos',array('controller' => 'grupos'), array('class' => 'grupos'))?></li>
+				<li><?php echo $html->link('Roles',array('controller' => 'roles'), array('class' => 'roles'))?></li>
+				<li><?php echo $html->link('Usuarios',array('controller' => 'usuarios'), array('class' => 'usuarios'))?></li>
+				<li class="corner_right"><?php echo $html->link('UEAs',array('controller' => 'ueas'), array('class' => 'ueas'))?></li>
 				<?php if($this->Session->read('Auth.Usuario.nombre')){
-					echo 'Ver perfil: ' . $this->Session->read('Auth.Usuario.nombre') . ' | ';
-					echo $this->Html->link('Salir', array('controller' => 'usuarios', 'action' => 'logout'));
+					echo '<li class="corner_left">'.$this->Html->link('Perfil', array('controller' => 'usuarios', 'action' => 'view', $this->Session->read('Auth.Usuario.id')), array('class' => 'perfil')).'</li>';
+					echo '<li class="corner_right">'.$this->Html->link('Salir', array('controller' => 'usuarios', 'action' => 'logout'), array('class' => 'logout')).'</li>';
 				}
 				else {
-					echo $this->Html->link('Entrar', array('controller' => 'usuarios', 'action' => 'login'));
+					echo '<li class="corner_left">'.$this->Html->link('Registrarse', array('controller' => 'usuarios', 'action' => 'registro'), array('class' => 'registro')).'</li>';
+					echo '<li class="corner_right">'.$this->Html->link('Entrar', array('controller' => 'usuarios', 'action' => 'login'), array('class' => 'login')).'</li>';
 				}
 				?>
 			</ul>
 		</div>
+		<div style="clear:both"></div>
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
@@ -65,8 +67,12 @@
 		</div>
 		<div id="footer">
 			Sistema de Evaluación Automática de Programas <br/>
-			<?php echo $this->Html->link('CakePHP: the rapid development php framework', 'http://cakephp.org'); ?> | 
-			<?php echo $this->Html->link('Silk Icons', 'http://www.famfamfam.com/lab/icons/silk/'); ?>
+			Powered by 
+			<?php echo $html->link('CakePHP', 'http://cakephp.org'); ?>, 
+			<?php echo $html->link('Apache Server', 'http://httpd.apache.org/') ?>, 
+			<?php echo $html->link('PHP', 'http://www.php.net/') ?>, 
+			<?php echo $html->link('MySQL', 'http://www.mysql.com/') ?> & 
+			<?php echo $html->link('Silk Icons', 'http://www.famfamfam.com/lab/icons/silk/'); ?>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
