@@ -14,34 +14,49 @@ a {
 	color: #003D98;
 	text-decoration: none;
 }
+a:visited {
+	color: #475F81;
+}
 a:hover {
 	color: #0065FE;
 	text-decoration: underline;
-}
-a:visited {
-	color: #0065FE;
 }
 
 /** Layout **/
 #container {
 	text-align: left;
 	margin: 25px;
-	border: solid 1px #98003E;
+	
 	-moz-box-shadow: 10px 10px 10px #C594A8;
 	-webkit-box-shadow: 10px 10px 10px #C594A8;
 	box-shadow: 10px 10px 10px #C594A8;
+	
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
 #header{
 	background: #FFF;
 	padding: 16px;
+	border: solid #98003E;
+	border-width: 1px 1px 0 1px;
+	
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 #menu{
+	background: #98003E;
+	border: solid #98003E;
+	border-width: 0 1px 0 1px;
+	
 	padding-top: 12px;
 	height: 26px;
-	background: #98003E;
 }
 #content{
 	background: #FFF;
+	border: solid #98003E;
+	border-width: 0 1px 0 1px;
 	padding: 15px;
 	overflow: auto;
 }
@@ -51,9 +66,19 @@ a:visited {
 	padding: 6px 10px;
 	text-align: center;
 	font-size: 75%;
+	
+	-moz-border-bottom-left-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 /** Adicionales a layout **/
+#footer a {
+	color: #64A2FF;
+}
+
+/** Menú **/
 #menu ul {
 	list-style: none;
 }
@@ -125,6 +150,70 @@ a:visited {
 	-moz-border-top-right-radius: 5px;
 	border-top-right-radius: 5px;
 }
-#footer a {
-	color: #64A2FF;
+
+/** Tablas **/
+table {
+	border-right:0;
+	clear: both;
+	margin-bottom: 10px;
+	width: 100%;
+}
+th {
+	border:0;
+	border-bottom:2px solid #555;
+	text-align: left;
+	padding:4px;
+}
+th a {
+	display: block;
+	padding: 2px 4px;
+	text-decoration: none;
+}
+th a.asc:after {
+	content: ' ⇣';
+}
+th a.desc:after {
+	content: ' ⇡';
+}
+table tr td {
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom:1px solid #ddd;
+}
+table tr:nth-child(2n) td {
+	background: #f5f5f5;
+}
+table .altrow td {
+	background: #f5f5f5;
+}
+td.actions {
+	text-align: center;
+	white-space: nowrap;
+}
+table td.actions a {
+	margin: 0px 6px;
+	padding:2px 5px;
+}
+
+/** Mensajes**/
+div .error-message {
+	color: #fff;
+	font-weight: bold;
+	background: #98003E;
+}
+div.message {
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 15px;
+	padding-left: 20px;
+	border: 4px solid;
+}
+#authMessage {
+	background: url(/sexap/icons/lock.png) no-repeat #98003E;
+	border-color: #98003E;
+}
+#flashMessage {
+	background: url(/sexap/icons/information.png) no-repeat #003D98;
+	border-color: #003D98;
 }
