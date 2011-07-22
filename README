@@ -1,74 +1,34 @@
-Ya están los permisos listos.
-Los permisos se asignan sobre las acciones de un controlador.
-Para cada acción hay tres 'alcances' de permisos:
-	- todo. la acción es autorizada sobre cualquier elemento
-	- sin permiso. la acción siempre es negada
-	- autor. la acción es autorizada sólo si el usuario loggeado es autor del elemento.
-		si el máximo alcance es autor, pero la acción o el elemento no cuenta con datos de autor, el alcance equivale a todo. (o podría equivaler a sin permiso)
-Para que el controlador de permisos sepa quien es el autor hay que crear una función en cada controlador que lo requiera
-	_esAutor($usuario_id, $id)
-que debe devuelve true si el usuario es autor del elemento.
-Si no se crea esta función, por defecto es como si siempre devolviera true.
+CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
 
-Lo voy a seguir revisando y probando pero creo que está bastante chido :)
+The Cake Software Foundation - promoting development related to CakePHP
+http://cakefoundation.org/
 
-Edito: El unico detalle es que las acciones como ver, editar, eliminar deben ser de la forma
-	accion($id = null, otros parametros...)
-pero eso de por sí ya es así. Por lo demás todo debería seguir funcionando normal.
+CakePHP - the rapid development PHP framework
+http://www.cakephp.org
 
-[Ernesto]
----
+Cookbook - user documentation for learning about CakePHP
+http://book.cakephp.org
 
-- ¿Hacemos una Wiki?
-- Alphanumeric no admite espacios!
-- Las fechas no funcionan.
+API - quick reference to CakePHP
+http://api.cakephp.org
 
-[Ernesto]
----
+The Bakery - everything CakePHP
+http://bakery.cakephp.org
 
-Observaciones de Rafael:
+The Show - live and archived podcasts about CakePHP and more
+http://live.cakephp.org
 
-1. Que feo es CakePHP. Grails pwnz.
-2. Considero que es mejor manejar la dificultad de los problemas como strings y no como números. Algo del tipo: "básico", "intermedio", "avanzado". Creo que seria modelado como están ahorita las UEA's.
-- Eso se puede manejar desde la vista, independientemente de cómo se represente en la base de datos. Se puede crear una lista para seleccionar Fácil, Medio, Difícil en HTML y que tengan al valor que querramos. [Ernesto]
-3. Me faltaron añadir acentos. No se bien que onda con la codificación de la Cake.
-- UTF8. Archivos en UTF8. Cadenas en UTF8. BD en UTF8. Todo en UTF8. Es el futuro! [Ernesto]
-4. En la validación del modelo de grupo, omití lo de horarios y use 'descripcion'. No se que cambios se deban de hacer en la bd o los controladores.
-5. Deje pendiente usuario, ya me dio sueño.
-6. zzzZzzzzZzzzzzzzz 
+CakePHP Google Group - community mailing list and forum
+http://groups.google.com/group/cake-php
 
-[Rafael]
----
+#cakephp on irc.freenode.net - chat with CakePHP developers
+irc://irc.freenode.net/cakephp
 
-Quité del control de versiones los archivos temporales y de caché que genera cake. Tan sólo he dejado la estructura de carpetas para que todo pueda funcionar.
+CakeForge - open development for CakePHP
+http://cakeforge.org
 
-** No agregar ningún archivo de la carpeta /app/tmp **
+CakePHP gear
+http://www.cafepress.com/cakefoundation
 
-[Ernesto]
----
-
-He creado un usuario para fácil ingreso
-Tendrá todos los permisos (cuando esté implementado)
-matricula:  1234
-contraseña: 1234
-
-[Ernesto]
----
-
-Todos los archivos de la aplicación están en
-/app
-
-Los modelos van en 
-/app/models/<nombre del modelo en singular>.php
-
-Los controladores en
-/app/controllers/<nombre del modelo en plural>_controller.php
-
-Las vistas en
-/app/views/<nombre de modelo en plural>/<nombre de la accion>.ctp
-
-Hay un volcado de la estructura de las tablas en
-/db_struct.sql
-
-y un volcado de los datos con los que he trabajado en
-/db_data.sql
+Recommended Reading
+http://astore.amazon.com/cakesoftwaref-20/
