@@ -14,11 +14,9 @@ class Usuario extends AppModel {
 	
 	//Validación
         var $validate = array(
-                //IMPORTANTE !!! Sólo es validación para letras, faltaría eliminar espacios extra si es que 
-                //eso se pretende...
                 'nombre' => array(
                         'reglanombre-1' => array(
-                                'rule' => '/^[a-zA-Z]$/i',
+                                'rule' => '/[A-Z][a-z]+ [A-Z][a-z]+/i',
                                 'message' => 'Solo se permiten letras en el nombre del usuario.'
                         ),
                         'reglanombre-2' => array(
@@ -27,18 +25,12 @@ class Usuario extends AppModel {
                         )
                 ),
                 'mat_eco' => array(
-                        'reglamat_eco-1' => array(
-                                'rule' => 'Numeric',
-                                'message' => 'Solo se permiten numeros.'
-                        ),
-                        'reglamat_eco-2' => array(
-                                'rule' => 'notEmpty',
-                                'message' => 'Escriba la matricula o No. economico del usuario.'
-                        )
+                        'rule' => 'notEmpty',
+                        'message' => 'Escriba la matricula o No. economico del usuario.'
                 ),
                 'contrasena' => array(
                         'reglacontrasena-1' => array(
-                                'rule' => array('between', 5, 15),
+                                'rule' => array('between', 8, 40),
                                 'message' => 'La contraseña debe tener una longitud entre 8 y 40 caracteres.'
                         ),
                         'reglacontrasena-2' => array(
@@ -52,7 +44,7 @@ class Usuario extends AppModel {
                 ),
                 'car_depto' => array(
                         'reglacar_depto-1' => array(
-                                'rule' => '/^[a-zA-Z]$/i',
+                                'rule' => '/[A-Z][a-z]+ [A-Z][a-z]+/i',
                                 'message' => 'Solo se permiten letras en este campo.'
                         ),
                         'reglanombre-2' => array(

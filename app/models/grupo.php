@@ -15,24 +15,12 @@ class Grupo extends AppModel {
 	//Validación
 	var $validate = array(
 		'nombre' => array(
-			'reglanombre-1' => array(
-				'rule' => array('maxLength', 50),
-				'message' => 'El nombre del grupo sobrepasa el limite de caracteres permitidos.'
-			),
-			'reglanombre-2' => array(
-				'rule' => 'notEmpty',
-				'message' => 'No puede dejar el nombre del grupo en blanco.'
-			)
+			'rule' => 'notEmpty',
+			'message' => 'No puede dejar el nombre del grupo en blanco.'
 		),
 		'descripcion' => array(
-			'regladescripcion-1' => array(
-				'rule' => array('maxLength', 500),
-				'message' => 'La descripcion del grupo sobrepasa el limite de caracteres permitidos.'
-			),
-			'regladescripcion-2' => array(
-				'rule' => 'notEmpty',
-				'message' => 'No puede dejar la descripcion del grupo en blanco.'
-			)
+			'rule' => 'notEmpty',
+			'message' => 'No puede dejar la descripcion del grupo en blanco.'
 		)
 	);
 }
