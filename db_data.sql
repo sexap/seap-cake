@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-07-2011 a las 20:36:28
+-- Tiempo de generación: 26-07-2011 a las 05:35:13
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -39,8 +39,8 @@ INSERT INTO `actividades_grupos` (`actividad_id`, `grupo_id`) VALUES
 --
 
 INSERT INTO `actividades_problemas` (`actividad_id`, `problema_id`) VALUES
-(1, 1),
-(1, 2);
+(1, 2),
+(1, 1);
 
 --
 -- Volcar la base de datos para la tabla `comentarios`
@@ -82,23 +82,12 @@ INSERT INTO `grupos_usuarios_responsables` (`grupo_id`, `usuario_id`) VALUES
 -- Volcar la base de datos para la tabla `permisos`
 --
 
-INSERT INTO `permisos` (`id`, `permiso`) VALUES
-(1, '*.*'),
-(4, 'actividades.*'),
-(3, 'problemas.*'),
-(5, '*.index'),
-(6, '*.*.autor');
-
---
--- Volcar la base de datos para la tabla `permisos_roles`
---
-
-INSERT INTO `permisos_roles` (`permiso_id`, `rol_id`) VALUES
-(1, 3),
-(5, 2),
-(3, 2),
-(4, 2),
-(6, 4);
+INSERT INTO `permisos` (`id`, `rol_id`, `permiso`) VALUES
+(1, 3, '*.*'),
+(4, 0, 'actividades.*'),
+(3, 0, 'problemas.*'),
+(5, 0, '*.index'),
+(6, 0, '*.*.autor');
 
 --
 -- Volcar la base de datos para la tabla `problemas`
@@ -110,14 +99,18 @@ INSERT INTO `problemas` (`id`, `titulo`, `autor`, `enunciado`, `observaciones`, 
 (3, 'Test', 'JaimeDuende', 'asdf', '', 'c', 0, 0, 3, 4);
 
 --
+-- Volcar la base de datos para la tabla `problemas_usuarios`
+--
+
+
+--
 -- Volcar la base de datos para la tabla `roles`
 --
 
 INSERT INTO `roles` (`id`, `nombre`) VALUES
 (1, 'Alumno'),
 (2, 'Profesor'),
-(3, 'Administrador'),
-(4, 'Autor');
+(3, 'Administrador');
 
 --
 -- Volcar la base de datos para la tabla `roles_usuarios`
@@ -127,9 +120,31 @@ INSERT INTO `roles_usuarios` (`rol_id`, `usuario_id`) VALUES
 (3, 4),
 (1, 2),
 (1, 3),
-(4, 1),
 (2, 2),
 (3, 2);
+
+--
+-- Volcar la base de datos para la tabla `test_suite_auth_users`
+--
+
+INSERT INTO `test_suite_auth_users` (`id`, `username`, `password`, `created`, `updated`) VALUES
+(1, 'mariano', '5f4dcc3b5aa765d61d8327deb882cf99', '2007-03-17 01:16:23', '2007-03-17 01:18:31'),
+(2, 'nate', '5f4dcc3b5aa765d61d8327deb882cf99', '2007-03-17 01:18:23', '2007-03-17 01:20:31'),
+(3, 'larry', '5f4dcc3b5aa765d61d8327deb882cf99', '2007-03-17 01:20:23', '2007-03-17 01:22:31'),
+(4, 'garrett', '5f4dcc3b5aa765d61d8327deb882cf99', '2007-03-17 01:22:23', '2007-03-17 01:24:31'),
+(5, 'chartjes', '5f4dcc3b5aa765d61d8327deb882cf99', '2007-03-17 01:22:23', '2007-03-17 01:24:31');
+
+--
+-- Volcar la base de datos para la tabla `test_suite_datatypes`
+--
+
+INSERT INTO `test_suite_datatypes` (`id`, `float_field`, `bool`) VALUES
+(1, 42.23, 0);
+
+--
+-- Volcar la base de datos para la tabla `test_suite_prefix_prefix_tests`
+--
+
 
 --
 -- Volcar la base de datos para la tabla `ueas`

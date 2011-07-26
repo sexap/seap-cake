@@ -284,6 +284,58 @@
 	</div>
 </div>
 <div class="related">
+	<h3><?php __('Related Problemas');?></h3>
+	<?php if (!empty($usuario['Pendiente'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Titulo'); ?></th>
+		<th><?php __('Autor'); ?></th>
+		<th><?php __('Enunciado'); ?></th>
+		<th><?php __('Observaciones'); ?></th>
+		<th><?php __('Palabras Clave'); ?></th>
+		<th><?php __('Dificultad'); ?></th>
+		<th><?php __('Privado'); ?></th>
+		<th><?php __('Uea Id'); ?></th>
+		<th><?php __('Usuario Id'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($usuario['Pendiente'] as $pendiente):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $pendiente['id'];?></td>
+			<td><?php echo $pendiente['titulo'];?></td>
+			<td><?php echo $pendiente['autor'];?></td>
+			<td><?php echo $pendiente['enunciado'];?></td>
+			<td><?php echo $pendiente['observaciones'];?></td>
+			<td><?php echo $pendiente['palabras_clave'];?></td>
+			<td><?php echo $pendiente['dificultad'];?></td>
+			<td><?php echo $pendiente['privado'];?></td>
+			<td><?php echo $pendiente['uea_id'];?></td>
+			<td><?php echo $pendiente['usuario_id'];?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View', true), array('controller' => 'problemas', 'action' => 'view', $pendiente['id'])); ?>
+				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'problemas', 'action' => 'edit', $pendiente['id'])); ?>
+				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'problemas', 'action' => 'delete', $pendiente['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $pendiente['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Pendiente', true), array('controller' => 'problemas', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
 	<h3><?php __('Related Grupos');?></h3>
 	<?php if (!empty($usuario['IntegranteDe'])):?>
 	<table cellpadding = "0" cellspacing = "0">

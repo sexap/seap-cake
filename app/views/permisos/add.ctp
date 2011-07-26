@@ -14,5 +14,7 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Permisos', true), array('action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('List Roles', true), array('controller' => 'roles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Rol', true), array('controller' => 'roles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

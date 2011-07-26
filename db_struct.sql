@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-07-2011 a las 20:35:55
+-- Tiempo de generación: 26-07-2011 a las 05:34:59
 -- Versión del servidor: 5.1.53
 -- Versión de PHP: 5.3.4
 
@@ -147,21 +147,10 @@ CREATE TABLE IF NOT EXISTS `grupos_usuarios_responsables` (
 DROP TABLE IF EXISTS `permisos`;
 CREATE TABLE IF NOT EXISTS `permisos` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
+  `rol_id` int(32) unsigned NOT NULL,
   `permiso` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `permisos_roles`
---
-
-DROP TABLE IF EXISTS `permisos_roles`;
-CREATE TABLE IF NOT EXISTS `permisos_roles` (
-  `permiso_id` int(32) unsigned NOT NULL,
-  `rol_id` int(32) unsigned NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
 
@@ -187,6 +176,18 @@ CREATE TABLE IF NOT EXISTS `problemas` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `problemas_usuarios`
+--
+
+DROP TABLE IF EXISTS `problemas_usuarios`;
+CREATE TABLE IF NOT EXISTS `problemas_usuarios` (
+  `problema_id` int(32) unsigned NOT NULL,
+  `usuario_id` int(32) unsigned NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `roles`
 --
 
@@ -195,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
@@ -208,6 +209,48 @@ CREATE TABLE IF NOT EXISTS `roles_usuarios` (
   `rol_id` int(32) unsigned DEFAULT NULL,
   `usuario_id` int(32) unsigned NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `test_suite_auth_users`
+--
+
+DROP TABLE IF EXISTS `test_suite_auth_users`;
+CREATE TABLE IF NOT EXISTS `test_suite_auth_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `test_suite_datatypes`
+--
+
+DROP TABLE IF EXISTS `test_suite_datatypes`;
+CREATE TABLE IF NOT EXISTS `test_suite_datatypes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `float_field` float(5,2) NOT NULL,
+  `bool` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `test_suite_prefix_prefix_tests`
+--
+
+DROP TABLE IF EXISTS `test_suite_prefix_prefix_tests`;
+CREATE TABLE IF NOT EXISTS `test_suite_prefix_prefix_tests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

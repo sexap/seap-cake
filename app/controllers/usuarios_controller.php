@@ -38,11 +38,11 @@ class UsuariosController extends AppController {
 				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
 			}
 		}
+		$pendientes = $this->Usuario->Pendiente->find('list');
 		$integranteDes = $this->Usuario->IntegranteDe->find('list');
 		$responsableDes = $this->Usuario->ResponsableDe->find('list');
 		$roles = $this->Usuario->Rol->find('list');
-		$problemas = $this->Usuario->Problema->find('list');
-		$this->set(compact('integranteDes', 'responsableDes', 'roles', 'problemas'));
+		$this->set(compact('pendientes', 'integranteDes', 'responsableDes', 'roles'));
 	}
 
 	function edit($id = null) {
@@ -61,11 +61,11 @@ class UsuariosController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Usuario->read(null, $id);
 		}
+		$pendientes = $this->Usuario->Pendiente->find('list');
 		$integranteDes = $this->Usuario->IntegranteDe->find('list');
 		$responsableDes = $this->Usuario->ResponsableDe->find('list');
 		$roles = $this->Usuario->Rol->find('list');
-		$problemas = $this->Usuario->Problema->find('list');
-		$this->set(compact('integranteDes', 'responsableDes', 'roles', 'problemas'));
+		$this->set(compact('pendientes', 'integranteDes', 'responsableDes', 'roles'));
 	}
 
 	function delete($id = null) {

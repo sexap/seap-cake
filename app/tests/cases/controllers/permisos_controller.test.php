@@ -1,5 +1,5 @@
 <?php
-/* Permisos Test cases generated on: 2011-07-26 04:41:10 : 1311655270*/
+/* Permisos Test cases generated on: 2011-07-26 05:21:25 : 1311657685*/
 App::import('Controller', 'Permisos');
 
 class TestPermisosController extends PermisosController {

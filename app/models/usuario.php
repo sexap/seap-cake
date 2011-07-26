@@ -8,7 +8,7 @@ class Usuario extends AppModel {
 	var $hasMany = array('Problema', 'Envio', 'Comentario', 'Actividad');
 	var $hasAndBelongsToMany = array(
 		'Rol', 
-		'Problema',
+		'Pendiente' => array('className' => 'Problema'),
 		'IntegranteDe' => array('className' => 'Grupo', 'joinTable' => 'grupos_usuarios_miembros'),
 		'ResponsableDe' => array('className' => 'Grupo', 'joinTable' => 'grupos_usuarios_responsables')
 	);

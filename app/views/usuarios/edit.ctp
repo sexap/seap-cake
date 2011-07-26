@@ -16,10 +16,10 @@
 		echo $this->Form->input('facebook');
 		echo $this->Form->input('baneado');
 		echo $this->Form->input('razon');
+		echo $this->Form->input('Pendiente');
 		echo $this->Form->input('IntegranteDe');
 		echo $this->Form->input('ResponsableDe');
 		echo $this->Form->input('Rol');
-		echo $this->Form->input('Problema');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

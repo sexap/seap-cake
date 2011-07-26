@@ -1,5 +1,5 @@
 <?php
-/* Roles Test cases generated on: 2011-07-26 04:41:37 : 1311655297*/
+/* Roles Test cases generated on: 2011-07-26 05:21:12 : 1311657672*/
 App::import('Controller', 'Roles');
 
 class TestRolesController extends RolesController {

@@ -16,5 +16,7 @@
 
 		<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Permiso.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $this->Form->value('Permiso.id'))); ?></li>
 		<li><?php echo $this->Html->link(__('List Permisos', true), array('action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('List Roles', true), array('controller' => 'roles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Rol', true), array('controller' => 'roles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

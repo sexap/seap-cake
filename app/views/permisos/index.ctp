@@ -17,7 +17,9 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $permiso['Permiso']['id']; ?>&nbsp;</td>
-		<td><?php echo $permiso['Permiso']['rol_id']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($permiso['Rol']['nombre'], array('controller' => 'roles', 'action' => 'view', $permiso['Rol']['id'])); ?>
+		</td>
 		<td><?php echo $permiso['Permiso']['permiso']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $permiso['Permiso']['id'])); ?>
@@ -45,5 +47,7 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Permiso', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Roles', true), array('controller' => 'roles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Rol', true), array('controller' => 'roles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

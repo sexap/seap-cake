@@ -38,7 +38,6 @@ class AppController extends Controller {
 	//Es llamada por el módulo Auth para decidir si el usuario puede accesar o no al elemento solicitado
 	//Devuelve true si el usuario es autorizado, false en caso contrario
 	function isAuthorized(){
-		return true; //////////////////////////////
 		$permiso= $this->__alcancePermiso($this->name, $this->action);
 		if($permiso == '') return false;
 		if($permiso == 'todo') return true;
@@ -71,16 +70,16 @@ class AppController extends Controller {
 			//Construir la consulta para ver los permisos del usuario
 			$opciones['joins'] = array(
 				array(
-					'table' => 'permisos_roles',
-					'alias' => 'PermisosRoles',
+					'table' => 'roles',
+					'alias' => 'Roles',
 					'type' => 'inner',
-					'conditions' => array('Permiso.id = PermisosRoles.permiso_id')
+					'conditions' => array('Permiso.rol_id = Roles.id')
 				),
 				array(
 					'table' => 'roles_usuarios',
 					'alias' => 'RolesUsuarios',
 					'type' => 'inner',
-					'conditions' => array('PermisosRoles.rol_id = RolesUsuarios.rol_id')
+					'conditions' => array('Roles.id = RolesUsuarios.rol_id')
 				)
 			);
 			$opciones['conditions'] = array('RolesUsuarios.usuario_id' => $this->Auth->user('id'));

@@ -12,8 +12,8 @@
 		echo $this->Form->input('privado');
 		echo $this->Form->input('uea_id');
 		echo $this->Form->input('usuario_id');
+		echo $this->Form->input('PendienteDe');
 		echo $this->Form->input('Actividad');
-		echo $this->Form->input('Usuario');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
