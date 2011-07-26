@@ -31,7 +31,6 @@ class UsuariosController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			$this->Usuario->create();
-			$this->Usuario->
 			if ($this->Usuario->save($this->data)) {
 				$this->Session->setFlash(__('The usuario has been saved', true));
 				$this->redirect(array('action' => 'index'));
