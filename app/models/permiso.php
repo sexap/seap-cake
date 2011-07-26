@@ -5,7 +5,7 @@ class Permiso extends AppModel {
 	var $displayField = 'permiso';
 	
 	//Relaciones
-	var $hasAndBelongsToMany = 'Rol';
+	var $belongsTo = 'Rol';
 	
 	//Validación
 	var $validate = array(

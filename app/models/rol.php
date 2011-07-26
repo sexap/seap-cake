@@ -5,7 +5,8 @@ class Rol extends AppModel {
 	var $displayField = 'nombre';
 	
 	//Relaciones
-	var $hasAndBelongsToMany = array('Usuario', 'Permiso');
+	var $hasAndBelongsToMany = 'Usuario';
+	var $hasMany = 'Permiso';
 	
 	//Validación
 	var $validate = array(

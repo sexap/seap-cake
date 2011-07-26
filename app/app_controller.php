@@ -38,6 +38,7 @@ class AppController extends Controller {
 	//Es llamada por el módulo Auth para decidir si el usuario puede accesar o no al elemento solicitado
 	//Devuelve true si el usuario es autorizado, false en caso contrario
 	function isAuthorized(){
+		return true; //////////////////////////////
 		$permiso= $this->__alcancePermiso($this->name, $this->action);
 		if($permiso == '') return false;
 		if($permiso == 'todo') return true;

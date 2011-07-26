@@ -41,7 +41,8 @@ class UsuariosController extends AppController {
 		$integranteDes = $this->Usuario->IntegranteDe->find('list');
 		$responsableDes = $this->Usuario->ResponsableDe->find('list');
 		$roles = $this->Usuario->Rol->find('list');
-		$this->set(compact('integranteDes', 'responsableDes', 'roles'));
+		$problemas = $this->Usuario->Problema->find('list');
+		$this->set(compact('integranteDes', 'responsableDes', 'roles', 'problemas'));
 	}
 
 	function edit($id = null) {
@@ -63,7 +64,8 @@ class UsuariosController extends AppController {
 		$integranteDes = $this->Usuario->IntegranteDe->find('list');
 		$responsableDes = $this->Usuario->ResponsableDe->find('list');
 		$roles = $this->Usuario->Rol->find('list');
-		$this->set(compact('integranteDes', 'responsableDes', 'roles'));
+		$problemas = $this->Usuario->Problema->find('list');
+		$this->set(compact('integranteDes', 'responsableDes', 'roles', 'problemas'));
 	}
 
 	function delete($id = null) {

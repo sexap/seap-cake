@@ -19,6 +19,7 @@
 		echo $this->Form->input('IntegranteDe');
 		echo $this->Form->input('ResponsableDe');
 		echo $this->Form->input('Rol');
+		echo $this->Form->input('Problema');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

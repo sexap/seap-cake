@@ -6,7 +6,7 @@ class Problema extends AppModel {
 	
 	//Relaciones
 	var $belongsTo = array('Usuario', 'Uea');
-	var $hasAndBelongsToMany = 'Actividad';
+	var $hasAndBelongsToMany = array('Actividad', 'Usuario');
 	var $hasMany = array('Envio', 'Comentario');
 	
 	//Validación

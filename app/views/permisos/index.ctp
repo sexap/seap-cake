@@ -3,6 +3,7 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('rol_id');?></th>
 			<th><?php echo $this->Paginator->sort('permiso');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
@@ -16,6 +17,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $permiso['Permiso']['id']; ?>&nbsp;</td>
+		<td><?php echo $permiso['Permiso']['rol_id']; ?>&nbsp;</td>
 		<td><?php echo $permiso['Permiso']['permiso']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $permiso['Permiso']['id'])); ?>
@@ -43,7 +45,5 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Permiso', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Roles', true), array('controller' => 'roles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Rol', true), array('controller' => 'roles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

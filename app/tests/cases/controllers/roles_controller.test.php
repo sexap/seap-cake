@@ -1,5 +1,5 @@
 <?php
-/* Roles Test cases generated on: 2011-06-30 15:39:06 : 1309448346*/
+/* Roles Test cases generated on: 2011-07-26 04:41:37 : 1311655297*/
 App::import('Controller', 'Roles');
 
 class TestRolesController extends RolesController {
@@ -11,7 +11,7 @@ class TestRolesController extends RolesController {
 }
 
 class RolesControllerTestCase extends CakeTestCase {
-	var $fixtures = array('app.rol', 'app.usuario', 'app.problema', 'app.uea', 'app.grupo', 'app.grupos_usuarios_miembro', 'app.grupos_usuarios_responsable', 'app.actividad', 'app.envio', 'app.actividades_grupo', 'app.actividades_problema', 'app.comentario', 'app.roles_usuario', 'app.permiso', 'app.permisos_role');
+	var $fixtures = array('app.rol', 'app.permiso', 'app.usuario', 'app.problema', 'app.problemas_usuario', 'app.uea', 'app.grupo', 'app.grupos_usuarios_miembro', 'app.grupos_usuarios_responsable', 'app.actividad', 'app.envio', 'app.actividades_problema', 'app.actividades_grupo', 'app.comentario', 'app.roles_usuario');
 
 	function startTest() {
 		$this->Roles =& new TestRolesController();

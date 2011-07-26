@@ -174,6 +174,7 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
+		<th><?php __('Usuario Id'); ?></th>
 		<th><?php __('Titulo'); ?></th>
 		<th><?php __('Tema'); ?></th>
 		<th><?php __('Descripcion'); ?></th>
@@ -191,6 +192,7 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $actividad['id'];?></td>
+			<td><?php echo $actividad['usuario_id'];?></td>
 			<td><?php echo $actividad['titulo'];?></td>
 			<td><?php echo $actividad['tema'];?></td>
 			<td><?php echo $actividad['descripcion'];?></td>
@@ -209,6 +211,64 @@
 	<div class="actions">
 		<ul>
 			<li><?php echo $this->Html->link(__('New Actividad', true), array('controller' => 'actividades', 'action' => 'add'));?> </li>
+		</ul>
+	</div>
+</div>
+<div class="related">
+	<h3><?php __('Related Usuarios');?></h3>
+	<?php if (!empty($problema['Usuario'])):?>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Id'); ?></th>
+		<th><?php __('Nombre'); ?></th>
+		<th><?php __('Mat Eco'); ?></th>
+		<th><?php __('Contrasena'); ?></th>
+		<th><?php __('Car Depto'); ?></th>
+		<th><?php __('Imagen'); ?></th>
+		<th><?php __('Firma'); ?></th>
+		<th><?php __('Correo'); ?></th>
+		<th><?php __('Telefono'); ?></th>
+		<th><?php __('Twitter'); ?></th>
+		<th><?php __('Facebook'); ?></th>
+		<th><?php __('Baneado'); ?></th>
+		<th><?php __('Razon'); ?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($problema['Usuario'] as $usuario):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $usuario['id'];?></td>
+			<td><?php echo $usuario['nombre'];?></td>
+			<td><?php echo $usuario['mat_eco'];?></td>
+			<td><?php echo $usuario['contrasena'];?></td>
+			<td><?php echo $usuario['car_depto'];?></td>
+			<td><?php echo $usuario['imagen'];?></td>
+			<td><?php echo $usuario['firma'];?></td>
+			<td><?php echo $usuario['correo'];?></td>
+			<td><?php echo $usuario['telefono'];?></td>
+			<td><?php echo $usuario['twitter'];?></td>
+			<td><?php echo $usuario['facebook'];?></td>
+			<td><?php echo $usuario['baneado'];?></td>
+			<td><?php echo $usuario['razon'];?></td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View', true), array('controller' => 'usuarios', 'action' => 'view', $usuario['id'])); ?>
+				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'usuarios', 'action' => 'edit', $usuario['id'])); ?>
+				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'usuarios', 'action' => 'delete', $usuario['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $usuario['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+<?php endif; ?>
+
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('New Usuario', true), array('controller' => 'usuarios', 'action' => 'add'));?> </li>
 		</ul>
 	</div>
 </div>

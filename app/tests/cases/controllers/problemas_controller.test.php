@@ -1,5 +1,5 @@
 <?php
-/* Problemas Test cases generated on: 2011-06-30 15:38:55 : 1309448335*/
+/* Problemas Test cases generated on: 2011-07-26 04:48:00 : 1311655680*/
 App::import('Controller', 'Problemas');
 
 class TestProblemasController extends ProblemasController {
@@ -11,7 +11,7 @@ class TestProblemasController extends ProblemasController {
 }
 
 class ProblemasControllerTestCase extends CakeTestCase {
-	var $fixtures = array('app.problema', 'app.usuario', 'app.envio', 'app.actividad', 'app.grupo', 'app.uea', 'app.grupos_usuarios_miembro', 'app.grupos_usuarios_responsable', 'app.actividades_grupo', 'app.actividades_problema', 'app.comentario', 'app.rol', 'app.roles_usuario', 'app.permiso', 'app.permisos_role');
+	var $fixtures = array('app.problema', 'app.usuario', 'app.problemas_usuario', 'app.envio', 'app.actividad', 'app.actividades_problema', 'app.grupo', 'app.uea', 'app.grupos_usuarios_miembro', 'app.grupos_usuarios_responsable', 'app.actividades_grupo', 'app.comentario', 'app.rol', 'app.permiso', 'app.roles_usuario');
 
 	function startTest() {
 		$this->Problemas =& new TestProblemasController();

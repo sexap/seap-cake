@@ -1,5 +1,5 @@
 <?php
-/* Permisos Test cases generated on: 2011-06-30 15:38:42 : 1309448322*/
+/* Permisos Test cases generated on: 2011-07-26 04:41:10 : 1311655270*/
 App::import('Controller', 'Permisos');
 
 class TestPermisosController extends PermisosController {
@@ -11,7 +11,7 @@ class TestPermisosController extends PermisosController {
 }
 
 class PermisosControllerTestCase extends CakeTestCase {
-	var $fixtures = array('app.permiso', 'app.rol', 'app.usuario', 'app.problema', 'app.uea', 'app.grupo', 'app.grupos_usuarios_miembro', 'app.grupos_usuarios_responsable', 'app.actividad', 'app.envio', 'app.actividades_grupo', 'app.actividades_problema', 'app.comentario', 'app.roles_usuario', 'app.permisos_role');
+	var $fixtures = array('app.permiso', 'app.rol', 'app.usuario', 'app.problema', 'app.problemas_usuario', 'app.uea', 'app.grupo', 'app.grupos_usuarios_miembro', 'app.grupos_usuarios_responsable', 'app.actividad', 'app.envio', 'app.actividades_problema', 'app.actividades_grupo', 'app.comentario', 'app.roles_usuario');
 
 	function startTest() {
 		$this->Permisos =& new TestPermisosController();

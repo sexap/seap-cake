@@ -9,7 +9,7 @@ class ProblemasController extends AppController {
 		$resultado = $this->Problema->find('count', $opciones);
 		return ($resultado == 1);
 	}
-	
+
 	function index() {
 		$this->Problema->recursive = 0;
 		$this->set('problemas', $this->paginate());
@@ -36,7 +36,8 @@ class ProblemasController extends AppController {
 		$usuarios = $this->Problema->Usuario->find('list');
 		$ueas = $this->Problema->Uea->find('list');
 		$actividades = $this->Problema->Actividad->find('list');
-		$this->set(compact('usuarios', 'ueas', 'actividades'));
+		$usuarios = $this->Problema->Usuario->find('list');
+		$this->set(compact('usuarios', 'ueas', 'actividades', 'usuarios'));
 	}
 
 	function edit($id = null) {
@@ -58,7 +59,8 @@ class ProblemasController extends AppController {
 		$usuarios = $this->Problema->Usuario->find('list');
 		$ueas = $this->Problema->Uea->find('list');
 		$actividades = $this->Problema->Actividad->find('list');
-		$this->set(compact('usuarios', 'ueas', 'actividades'));
+		$usuarios = $this->Problema->Usuario->find('list');
+		$this->set(compact('usuarios', 'ueas', 'actividades', 'usuarios'));
 	}
 
 	function delete($id = null) {
