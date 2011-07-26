@@ -18,7 +18,6 @@ class Actividad extends AppModel {
 		'tema' => array(
 			'rule' => 'notEmpty',
 			'message' => 'Escriba el tema de la actividad.'
-			//)
 		),
 		'descripcion' => array(
 			'rule' => 'notEmpty',

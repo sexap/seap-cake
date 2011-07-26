@@ -12,6 +12,7 @@ class Rol extends AppModel {
 		'nombre' => array(
 			'rule' => 'notEmpty',
 			'message' => 'No puede dejar el nombre del rol en blanco.'
+		)
 	);
 }
 ?>
