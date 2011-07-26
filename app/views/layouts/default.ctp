@@ -50,7 +50,7 @@
 					echo '<li class="corner_right">'.$this->Html->link('Salir', array('controller' => 'usuarios', 'action' => 'logout'), array('class' => 'logout')).'</li>';
 				}
 				else {
-					echo '<li class="corner_left">'.$this->Html->link('Registrarse', array('controller' => 'usuarios', 'action' => 'registro'), array('class' => 'registro')).'</li>';
+					echo '<li class="corner_left">'.$this->Html->link('Registrarse', array('controller' => 'usuarios', 'action' => 'register'), array('class' => 'registro')).'</li>';
 					echo '<li class="corner_right">'.$this->Html->link('Entrar', array('controller' => 'usuarios', 'action' => 'login'), array('class' => 'login')).'</li>';
 				}
 				?>

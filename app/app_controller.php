@@ -23,7 +23,7 @@ class AppController extends Controller {
 		$this->Auth->authError = 'No tienes permisos suficientes para continuar';
 		
 		//Autoriza todas las páginas estáticas
-		$this->Auth->allow('display');
+		$this->Auth->allow('display', 'register');
 		
 		//Si el usuario está baneado lo lleva a una página de advertencia (a menos que ya está ahí o vaya a salir)
 		$destino = $this->params['controller'].'/'.$this->params['action'];
@@ -79,10 +79,10 @@ class AppController extends Controller {
 					'table' => 'roles_usuarios',
 					'alias' => 'RolesUsuarios',
 					'type' => 'inner',
-					'conditions' => array('Roles.id = RolesUsuarios.rol_id')
+					'conditions' => array('OR' => array('Roles.id = RolesUsuarios.rol_id', 'Roles.nombre' => 'Invitado'))
 				)
 			);
-			$opciones['conditions'] = array('RolesUsuarios.usuario_id' => $this->Auth->user('id'));
+			$opciones['conditions'] = array('OR' => array('RolesUsuarios.usuario_id' => $this->Auth->user('id'), 'Roles.nombre' => 'Invitado'));
 			$opciones['recursive'] = -1;
 			$opciones['fields'] = array('DISTINCT permiso');
 			$tabla = $modeloPermiso->find('all', $opciones);

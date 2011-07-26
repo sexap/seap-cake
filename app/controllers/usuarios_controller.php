@@ -31,6 +31,7 @@ class UsuariosController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			$this->Usuario->create();
+			$this->Usuario->
 			if ($this->Usuario->save($this->data)) {
 				$this->Session->setFlash(__('The usuario has been saved', true));
 				$this->redirect(array('action' => 'index'));
@@ -43,6 +44,18 @@ class UsuariosController extends AppController {
 		$responsableDes = $this->Usuario->ResponsableDe->find('list');
 		$roles = $this->Usuario->Rol->find('list');
 		$this->set(compact('pendientes', 'integranteDes', 'responsableDes', 'roles'));
+	}
+	
+	function register(){
+		if (!empty($this->data)) {
+			$this->Usuario->create();
+			if ($this->Usuario->save($this->data)) {
+				$this->Session->setFlash(__('Te has registrado exitosamente.', true));
+				$this->redirect('/');
+			} else {
+				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
+			}
+		}
 	}
 
 	function edit($id = null) {
