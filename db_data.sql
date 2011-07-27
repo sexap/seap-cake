@@ -1,19 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.2.0.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-07-2011 a las 05:35:13
--- Versión del servidor: 5.1.53
--- Versión de PHP: 5.3.4
+-- Tiempo de generaci�n: 27-07-2011 a las 19:06:58
+-- Versi�n del servidor: 5.1.36
+-- Versi�n de PHP: 5.3.0
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `sexap`
@@ -24,7 +18,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 
 INSERT INTO `actividades` (`id`, `usuario_id`, `titulo`, `tema`, `descripcion`, `inicio`, `fin`) VALUES
-(1, 1, 'Tarea 1', 'Control Condicional', 'Â¡Haz tu tarea! Vale puntos extra.', '2011-06-16 21:07:00', '2011-06-21 21:07:00'),
+(1, 1, 'Tarea 1', 'Control Condicional', '¡Haz tu tarea! Vale puntos extra.', '2011-06-16 21:07:00', '2011-06-21 21:07:00'),
 (2, 2, 'Asdf', '', '', '2011-07-19 14:14:33', '2011-07-19 14:14:35');
 
 --
@@ -47,7 +41,7 @@ INSERT INTO `actividades_problemas` (`actividad_id`, `problema_id`) VALUES
 --
 
 INSERT INTO `comentarios` (`id`, `problema_id`, `usuario_id`, `fecha_envio`, `mensaje`) VALUES
-(1, 2, 1, '2011-06-15 18:49:00', 'No entiendo. Â¿QuÃ© es un entero?'),
+(1, 2, 1, '2011-06-15 18:49:00', 'No entiendo. ¿Qué es un entero?'),
 (2, 2, 2, '2011-06-15 18:53:00', 'Es como algo que no esta roto o partido en dos.');
 
 --
@@ -63,7 +57,7 @@ INSERT INTO `envios` (`id`, `problema_id`, `usuario_id`, `actividad_id`, `codigo
 --
 
 INSERT INTO `grupos` (`id`, `nombre`, `descripcion`, `uea_id`) VALUES
-(2, 'SAI-84', 'AsesorÃ­as: 11.30 - 13.00', 1),
+(2, 'SAI-84', 'Asesorías: 11.30 - 13.00', 1),
 (3, 'CAT-09', 'Lunes, Miercoles y Viernes 7.00 - 8.30', 4);
 
 --
@@ -87,15 +81,56 @@ INSERT INTO `permisos` (`id`, `rol_id`, `permiso`) VALUES
 (4, 0, 'actividades.*'),
 (3, 0, 'problemas.*'),
 (5, 0, '*.index'),
-(6, 0, '*.*.autor');
+(6, 0, '*.*.autor'),
+(9, 2, 'problemas.add'),
+(10, 2, 'problemas.edit.autor'),
+(11, 2, 'problemas.view'),
+(12, 2, 'actividades.view'),
+(13, 2, 'actividades.add'),
+(14, 2, 'actividades.edit.autor'),
+(15, 2, 'comentarios.view'),
+(16, 2, 'comentarios.add'),
+(17, 2, 'comentarios.edit.autor'),
+(18, 2, 'grupos.view'),
+(19, 2, 'grupos.add'),
+(20, 2, 'grupos.edit.autor'),
+(21, 2, 'usuarios.view'),
+(22, 2, 'problemas.index'),
+(23, 2, 'actividades.index'),
+(24, 2, 'comentarios.index'),
+(25, 2, 'grupos.index'),
+(26, 1, 'problemas.index'),
+(27, 1, 'problemas.view'),
+(28, 2, 'usuarios.index'),
+(29, 1, 'actividades.index'),
+(30, 1, 'actividades.view'),
+(31, 1, 'comentarios.index'),
+(32, 1, 'comentarios.view'),
+(33, 1, 'comentarios.add'),
+(34, 1, 'comentarios.edit.autor'),
+(35, 1, 'grupos.index'),
+(36, 1, 'grupos.view'),
+(37, 1, 'usuarios.index'),
+(38, 1, 'usuarios.view');
+
+--
+-- Volcar la base de datos para la tabla `permisos_roles`
+--
+
+INSERT INTO `permisos_roles` (`permiso_id`, `rol_id`) VALUES
+(1, 3),
+(5, 2),
+(3, 2),
+(4, 2),
+(6, 4);
 
 --
 -- Volcar la base de datos para la tabla `problemas`
 --
 
 INSERT INTO `problemas` (`id`, `titulo`, `autor`, `enunciado`, `observaciones`, `palabras_clave`, `dificultad`, `privado`, `uea_id`, `usuario_id`) VALUES
-(1, 'Un problema sencillo', 'Ernesto CastelÃ¡n ChÃ¡vez', 'Dados dos numeros a, b calcula la diferencia absoluta |a-b|.\r\n\r\nDatos de Entrada\r\nDos enteros a y b separados por un espacio.\r\n\r\nDatos de Salida\r\nUn entero, |a-b|\r\n\r\nEjemplo\r\n1 5\r\n4\r\n\r\n5 1\r\n4\r\n\r\n3 2\r\n1', '', '', 0, 0, 1, 1),
-(2, 'Hormigas felices', 'Ernesto CastelÃ¡n', 'Existe una colonia con N hormigas. En la colonia hay M fuentes de alimento con Ci cantidad de alimento cada una. Desbes encontrar la forma de que todas las hormigas se puedan alimentar caminando lo menos posible.\r\n\r\nDatos de Entrada\r\nUna lÃ­nea con dos enteros N y M separados por un espacio.\r\nUna lÃ­nea con M enteros que corresponden a Ci\r\n\r\nDatos de Salida\r\nUna lÃ­nea con un entero, la distancia mÃ­nima total recorrida por las hormigas.\r\nSi el alimento no alcanza para todas las hormigas -1\r\n\r\nEjemplo\r\n56 5\r\n67 86 87 6 8\r\n25\r\n', '', '', 2, 0, 4, 1),
+(1, 'Un problema sencillo', 'Ernesto Castelán Chávez', 'Dados dos numeros a, b calcula la diferencia absoluta |a-b|.\r\n\r\nDatos de Entrada\r\nDos enteros a y b separados por un espacio.\r\n\r\nDatos de Salida\r\nUn entero, |a-b|\r\n\r\nEjemplo\r\n1 5\r\n4\r\n\r\n5 1\r\n4\r\n\r\n3 2\r\n1', '', '', 0, 0, 1, 1),
+(2, 'Hormigas felices', 'Ernesto Castelán', 'Existe una colonia con N hormigas. En la colonia hay M fuentes de alimento con Ci cantidad de alimento cada una. Desbes encontrar la forma de que todas las hormigas se puedan alimentar caminando lo menos posible.\r\n\r\nDatos de Entrada\r\nUna línea con dos enteros N y M separados por un espacio.\r\nUna línea con M enteros que corresponden a Ci\r\n\r\nDatos de Salida\r\nUna línea con un entero, la distancia mínima total recorrida por las hormigas.\r\nSi el alimento no alcanza para todas las hormigas -1\r\n\r\nEjemplo\r\n56 5\r\n67 86 87 6 8\r\n25\r\n', '', '', 2, 0, 4, 1),
 (3, 'Test', 'JaimeDuende', 'asdf', '', 'c', 0, 0, 3, 4);
 
 --
@@ -110,7 +145,8 @@ INSERT INTO `problemas` (`id`, `titulo`, `autor`, `enunciado`, `observaciones`, 
 INSERT INTO `roles` (`id`, `nombre`) VALUES
 (1, 'Alumno'),
 (2, 'Profesor'),
-(3, 'Administrador');
+(3, 'Administrador'),
+(8, 'Invitado');
 
 --
 -- Volcar la base de datos para la tabla `roles_usuarios`
@@ -118,10 +154,9 @@ INSERT INTO `roles` (`id`, `nombre`) VALUES
 
 INSERT INTO `roles_usuarios` (`rol_id`, `usuario_id`) VALUES
 (3, 4),
-(1, 2),
 (1, 3),
-(2, 2),
-(3, 2);
+(2, 1),
+(1, 2);
 
 --
 -- Volcar la base de datos para la tabla `test_suite_auth_users`
@@ -151,17 +186,17 @@ INSERT INTO `test_suite_datatypes` (`id`, `float_field`, `bool`) VALUES
 --
 
 INSERT INTO `ueas` (`id`, `nombre`) VALUES
-(1, 'ProgramaciÃ³n Estructurada'),
+(1, 'Programación Estructurada'),
 (2, 'Estructura de Datos'),
-(3, 'Almacenamiento y RecuperaciÃ³n de la InformaciÃ³n'),
-(4, 'DiseÃ±o de Algoritmos');
+(3, 'Almacenamiento y Recuperación de la Información'),
+(4, 'Diseño de Algoritmos');
 
 --
 -- Volcar la base de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `mat_eco`, `contrasena`, `car_depto`, `imagen`, `firma`, `correo`, `telefono`, `twitter`, `facebook`, `baneado`, `razon`) VALUES
-(1, 'Profesor X', 0, '8aefb06c426e07a0a671a1e2488b4858d694a730', 'Ing. ComputaciÃ³n', '', '', '', '', '', '', 0, ''),
-(2, 'Juan Perez', 555, 'cfa1150f1787186742a9a884b73a43d8cf219f9b', 'SociologÃ­a', '', '', '', '', '', '', 0, ''),
+(1, 'Profesor X', 0, '8aefb06c426e07a0a671a1e2488b4858d694a730', 'Ing. Computación', '', '', 'prof_x@yahoo.com', '', '', '', 0, ''),
+(2, 'Juan Perez', 555, 'cfa1150f1787186742a9a884b73a43d8cf219f9b', 'Sociología', '', '', 'bla@hotmail.com', '', '', '', 0, ''),
 (3, 'Maloso', 666, 'cd3f0c85b158c08a2b113464991810cf2cdfc387', '', '', '', '', '', '', '', 1, 'Por maloso'),
-(4, 'Super Admin', 1234, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '', '', '', '', '', 0, 'No estÃ¡ baneado. Esto se mostrarÃ¡ como una advertencia.');
+(4, 'Super Admin', 1234, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '', '', '', '', '', 0, 'No está baneado. Esto se mostrará como una advertencia.');
