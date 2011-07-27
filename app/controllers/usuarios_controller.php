@@ -48,11 +48,13 @@ class UsuariosController extends AppController {
 	function register(){
 		if (!empty($this->data)) {
 			$this->Usuario->create();
+			$this->data['Usuario']['contrasena'] = $this->Auth->password($this->data['Usuario']['contrasena1']);
 			if ($this->Usuario->save($this->data)) {
+				$this->Auth->login($this->data);
 				$this->Session->setFlash(__('Te has registrado exitosamente.', true));
-				$this->redirect('/');
+				$this->redirect(array('action' => 'view', $this->Auth->user('id')));
 			} else {
-				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('No se ha podido completar tu registro.', true));
 			}
 		}
 	}

@@ -14,55 +14,57 @@ class Usuario extends AppModel {
 	);
 	
 	//Validación
-        var $validate = array(
-                'nombre' => array(
-                        'reglanombre-1' => array(
-                                'rule' => '/[A-Z][a-z]+ [A-Z][a-z]+/i',
-                                'message' => 'Solo se permiten letras en el nombre del usuario.'
-                        ),
-                        'reglanombre-2' => array(
-                                'rule' => 'notEmpty',
-                                'message' => 'Escriba el nombre del usuario.'
-                        )
-                ),
-                'mat_eco' => array(
-                        'rule' => 'notEmpty',
-                        'message' => 'Escriba la matricula o No. economico del usuario.'
-                ),
-                'contrasena' => array(
-                        'reglacontrasena-1' => array(
-                                'rule' => array('between', 8, 40),
-                                'message' => 'La contraseña debe tener una longitud entre 8 y 40 caracteres.'
-                        ),
-                        'reglacontrasena-2' => array(
-                                'rule' => 'alphaNumeric',
-                                'message' => 'Solo se permiten numeros y letras en la contraseña.'
-                        ),
-                        'reglacontrasena-3' => array(
-                                'rule' => 'notEmpty',
-                                'message' => 'Es necesario ingresar una contraseña.'
-                        )
-                ),
-                'car_depto' => array(
-                        'reglacar_depto-1' => array(
-                                'rule' => '/[A-Z][a-z]+ [A-Z][a-z]+/i',
-                                'message' => 'Solo se permiten letras en este campo.'
-                        ),
-                        'reglanombre-2' => array(
-                                'rule' => 'notEmpty',
-                                'message' => 'Ingrese la carrera o departamento del usuario.'
-                        )
-                ),
-                'correo' => array(
-                        'reglacorreo-1' => array(
-                                'rule' => array('email', true),
-                                'message' => 'Es necesario ingresar un email valido.'
-                        ),
-                        'reglacorreo-2' => array(
-                                'rule' => 'notEmpty',
-                                'message' => 'No dejar este campo en blanco.'
-                        )
-                )
-        );
+	var $validate = array(
+		'nombre' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Escriba su nombre.'
+		),
+		'mat_eco' => array(
+			'reglamat_eco-2' => array(
+				'rule' => 'numeric',
+				'message' => 'Matrícula o número económico incorrecto.'
+			),
+			'reglamat_eco-1' => array(
+				'rule' => 'notEmpty',
+				'message' => 'Escriba su matrícula o número económico.'
+			)
+		),
+		'contrasena1' => array(
+			'reglacontrasena1-1' => array(
+				'rule' => array('minLength', 6),
+				'message' => 'La contraseña debe tener al menos 6 caracteres.'
+			),
+			'reglacontrasena1-2' => array(
+				'rule' => 'notEmpty',
+				'message' => 'Escriba una contraseña.'
+			)
+		),
+		'contrasena2' => array(
+			'reglacontrasena2-1' => array(
+				'rule' => array('compareFields', 'contrasena1'),
+				'message' => 'Las contraseñas no coinciden.'
+			),
+			'reglacontrasena2-2' => array(
+				'rule' => 'notEmpty',
+				'message' => 'Escriba de nuevo la contraseña.'
+			)
+		),
+		'correo' => array(
+			'reglacorreo-1' => array(
+				'rule' => array('email', true),
+				'message' => 'Correo electrónico incorrecto.'
+			),
+			'reglacorreo-2' => array(
+				'rule' => 'notEmpty',
+				'message' => 'Escriba su correo electrónico.'
+			)
+		)
+	);
+	
+	function compareFields($thisField, $otherField = null){
+		if ($otherField == null) return false;
+		$value = array_shift($thisField);
+		return ($value == $this->data[$this->name][$otherField]);
+	}
 }
 ?>

@@ -22,14 +22,8 @@ class Problema extends AppModel {
 			'message' => 'Escriba el enunciado del problema.'
 		),
 		'autor' => array(
-			'reglaautor-1' => array(
-				'rule' => '/[A-Z][a-z]+ [A-Z][a-z]+/i',
-				'message' => 'Solo se permiten letras en el nombre del autor del problema.'
-			),
-			'reglaautor-2' => array(
-				'rule' => 'notEmpty',
-				'message' => 'Escriba el nombre del autor del problema.'
-			)
+			'rule' => 'notEmpty',
+			'message' => 'Escriba el nombre del autor del problema.'
 		), 
 		'dificultad' => array(
 			'regladificultad-1' => array(
