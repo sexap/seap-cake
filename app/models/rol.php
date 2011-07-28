@@ -14,7 +14,7 @@ class Rol extends AppModel {
 			'reglanombre-1' => array(
 				'rule' => 'isUnique',
 				'message' => 'El nombre está siendo usado por otro rol.'
-			)
+			),
 			'reglanombre-2' => array(
 				'rule' => 'notEmpty',
 				'message' => 'Escriba un nombre para el rol.'
