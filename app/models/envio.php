@@ -5,7 +5,8 @@ class Envio extends AppModel {
 	
 	//Relaciones
 	var $belongsTo = array('Problema', 'Usuario', 'Actividad');
-	
+	//fsdfghdfgh
+
 	//validación
 }
 ?>
