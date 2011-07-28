@@ -1,13 +1,19 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-07-2011 a las 19:02:39
--- Versión del servidor: 5.1.36
--- Versión de PHP: 5.3.0
+-- Tiempo de generaciÃ³n: 28-07-2011 a las 01:59:34
+-- VersiÃ³n del servidor: 5.1.53
+-- VersiÃ³n de PHP: 5.3.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `sexap`
@@ -144,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   `rol_id` int(32) unsigned NOT NULL,
   `permiso` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 -- --------------------------------------------------------
 
@@ -201,7 +207,8 @@ DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(256) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nombre` (`nombre`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
@@ -281,7 +288,7 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(32) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(512) NOT NULL,
-  `mat_eco` int(30) NOT NULL,
+  `mat_eco` varchar(16) NOT NULL,
   `contrasena` varchar(40) NOT NULL,
   `car_depto` varchar(512) NOT NULL,
   `imagen` varchar(2048) NOT NULL,

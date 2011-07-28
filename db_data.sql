@@ -1,13 +1,19 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generaci�n: 27-07-2011 a las 19:06:58
--- Versi�n del servidor: 5.1.36
--- Versi�n de PHP: 5.3.0
+-- Tiempo de generación: 28-07-2011 a las 01:59:45
+-- Versión del servidor: 5.1.53
+-- Versión de PHP: 5.3.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `sexap`
@@ -78,10 +84,6 @@ INSERT INTO `grupos_usuarios_responsables` (`grupo_id`, `usuario_id`) VALUES
 
 INSERT INTO `permisos` (`id`, `rol_id`, `permiso`) VALUES
 (1, 3, '*.*'),
-(4, 0, 'actividades.*'),
-(3, 0, 'problemas.*'),
-(5, 0, '*.index'),
-(6, 0, '*.*.autor'),
 (9, 2, 'problemas.add'),
 (10, 2, 'problemas.edit.autor'),
 (11, 2, 'problemas.view'),
@@ -111,7 +113,8 @@ INSERT INTO `permisos` (`id`, `rol_id`, `permiso`) VALUES
 (35, 1, 'grupos.index'),
 (36, 1, 'grupos.view'),
 (37, 1, 'usuarios.index'),
-(38, 1, 'usuarios.view');
+(38, 1, 'usuarios.view'),
+(39, 1, 'usuarios.edit.autor');
 
 --
 -- Volcar la base de datos para la tabla `permisos_roles`
@@ -145,8 +148,7 @@ INSERT INTO `problemas` (`id`, `titulo`, `autor`, `enunciado`, `observaciones`, 
 INSERT INTO `roles` (`id`, `nombre`) VALUES
 (1, 'Alumno'),
 (2, 'Profesor'),
-(3, 'Administrador'),
-(8, 'Invitado');
+(3, 'Administrador');
 
 --
 -- Volcar la base de datos para la tabla `roles_usuarios`
@@ -196,7 +198,7 @@ INSERT INTO `ueas` (`id`, `nombre`) VALUES
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `mat_eco`, `contrasena`, `car_depto`, `imagen`, `firma`, `correo`, `telefono`, `twitter`, `facebook`, `baneado`, `razon`) VALUES
-(1, 'Profesor X', 0, '8aefb06c426e07a0a671a1e2488b4858d694a730', 'Ing. Computación', '', '', 'prof_x@yahoo.com', '', '', '', 0, ''),
-(2, 'Juan Perez', 555, 'cfa1150f1787186742a9a884b73a43d8cf219f9b', 'Sociología', '', '', 'bla@hotmail.com', '', '', '', 0, ''),
-(3, 'Maloso', 666, 'cd3f0c85b158c08a2b113464991810cf2cdfc387', '', '', '', '', '', '', '', 1, 'Por maloso'),
-(4, 'Super Admin', 1234, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '', '', '', '', '', 0, 'No está baneado. Esto se mostrará como una advertencia.');
+(1, 'Profesor X', '000', '8aefb06c426e07a0a671a1e2488b4858d694a730', 'Ing. Computación', '', '', 'prof_x@yahoo.com', '', '', '', 0, ''),
+(2, 'Juan Perez', '555', 'cfa1150f1787186742a9a884b73a43d8cf219f9b', 'Sociología', '', '', 'bla@hotmail.com', '', '', '', 0, ''),
+(3, 'Maloso', '666', 'cd3f0c85b158c08a2b113464991810cf2cdfc387', '', '', '', '', '', '', '', 1, 'Por maloso'),
+(4, 'Super Admin', '1234', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', '', '', '', '', '', '', '', 0, 'No está baneado. Esto se mostrará como una advertencia.');
