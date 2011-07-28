@@ -1,4 +1,13 @@
-﻿<div class="problemas view">
+﻿<div class="actions_top">
+	<ul>
+		<li><?php echo $this->Html->link(__('Editar problema', true), array('action' => 'edit', $problema['Problema']['id']), array('class' => 'icon_edit')); ?> </li>
+		<li><?php echo $this->Html->link(__('Borrar problema', true), array('action' => 'delete', $problema['Problema']['id']), array('class' => 'icon_delete'), sprintf(__('Are you sure you want to delete # %s?', true), $problema['Problema']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('New Envio', true), array('controller' => 'envios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Comentario', true), array('controller' => 'comentarios', 'action' => 'add'), array('class' => 'icon_comment')); ?> </li>
+	</ul>
+</div>
+
+<div class="problemas view">
 <h2><?php echo $problema['Problema']['titulo']; ?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<!-- <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
@@ -52,25 +61,6 @@
 			&nbsp;
 		</dd>
 	</dl>
-</div>
-<div class="actions">
-	<h3><?php __('Acciones'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Editar Problema', true), array('action' => 'edit', $problema['Problema']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Borrar Problema', true), array('action' => 'delete', $problema['Problema']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $problema['Problema']['id'])); ?> </li>
-		<!-- <li><?php echo $this->Html->link(__('List Problemas', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Problema', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios', true), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario', true), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ueas', true), array('controller' => 'ueas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Uea', true), array('controller' => 'ueas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Envios', true), array('controller' => 'envios', 'action' => 'index')); ?> </li> -->
-		<li><?php echo $this->Html->link(__('New Envio', true), array('controller' => 'envios', 'action' => 'add')); ?> </li>
-		<!-- <li><?php echo $this->Html->link(__('List Comentarios', true), array('controller' => 'comentarios', 'action' => 'index')); ?> </li> -->
-		<li><?php echo $this->Html->link(__('New Comentario', true), array('controller' => 'comentarios', 'action' => 'add')); ?> </li>
-		<!-- <li><?php echo $this->Html->link(__('List Actividades', true), array('controller' => 'actividades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Actividad', true), array('controller' => 'actividades', 'action' => 'add')); ?> </li> -->
-	</ul>
 </div>
 <div class="related">
 	<h3><?php __('Envios Recientes');?></h3>
