@@ -33,6 +33,10 @@ class Usuario extends AppModel {
 				'message' => 'Escriba su matrícula o número económico.'
 			)
 		),
+		'contrasena' => array(
+			'rule' => 'notEmpty',
+			'message' => 'Escribe tu contraseña'
+		),
 		'contrasena1' => array(
 			'reglacontrasena1-1' => array(
 				'rule' => array('minLength', 6),
