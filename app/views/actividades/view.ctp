@@ -153,9 +153,6 @@
 		<!-- <th><?php __('observaciones');?></th> -->
 		<th><?php __('palabras_clave');?></th>
 		<th><?php __('dificultad');?></th>
-		<th><?php __('privado');?></th>
-		<th><?php __('uea_id');?></th>
-		<th><?php __('usuario_id');?></th>
 	</tr>
 	<?php
 		$i = 0;
@@ -173,9 +170,6 @@
 			<td><?php echo $problema['observaciones'];?></td> -->
 			<td><?php echo $problema['palabras_clave'];?></td>
 			<td><?php echo $problema['dificultad'];?></td>
-			<td><?php echo $problema['privado'];?></td>
-			<td><?php echo $problema['uea_id'];?></td>
-			<td><?php echo $problema['usuario_id'];?></td>
 		</tr>
 	<?php endforeach; ?>
 	</table>
