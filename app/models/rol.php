@@ -11,8 +11,14 @@ class Rol extends AppModel {
 	//Validación
 	var $validate = array(
 		'nombre' => array(
-			'rule' => 'notEmpty',
-			'message' => 'No puede dejar el nombre del rol en blanco.'
+			'reglanombre-1' => array(
+				'rule' => 'isUnique',
+				'message' => 'El nombre está siendo usado por otro rol.'
+			)
+			'reglanombre-2' => array(
+				'rule' => 'notEmpty',
+				'message' => 'Escriba un nombre para el rol.'
+			)
 		)
 	);
 }
