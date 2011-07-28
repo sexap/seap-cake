@@ -20,11 +20,15 @@ class Usuario extends AppModel {
 			'message' => 'Escriba su nombre.'
 		),
 		'mat_eco' => array(
+			'reglamat_eco-1' => array(
+				'rule' => 'isUnique',
+				'message' => 'La matrícula o número económico ya ha sido registrado por otro usuario.'
+			),
 			'reglamat_eco-2' => array(
 				'rule' => 'numeric',
 				'message' => 'Matrícula o número económico incorrecto.'
 			),
-			'reglamat_eco-1' => array(
+			'reglamat_eco-3' => array(
 				'rule' => 'notEmpty',
 				'message' => 'Escriba su matrícula o número económico.'
 			)

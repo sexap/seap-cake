@@ -73,6 +73,24 @@ a:hover {
 	border-bottom-right-radius: 10px;
 }
 
+/** Layout de portada **/
+#avisos {
+	padding: 10px;
+}
+#eventos {
+	padding: 10px;
+	width: 40%;
+	clear:left;
+	float: left;
+	display:inline;
+}
+#estadisticas {
+	padding: 10px;
+	width: 40%;
+	float: right;
+	display:inline;
+}
+
 /** Adicionales a layout **/
 #footer a {
 	color: #64A2FF;
@@ -177,6 +195,10 @@ th a.asc:after {
 th a.desc:after {
 	content: ' ⇡';
 }
+table tr:hover td,
+table .altrow:hover td{
+	background: #B0B0B0;
+}
 table tr td {
 	background: #fff;
 	padding: 6px;
@@ -197,17 +219,6 @@ td.actions {
 table td.actions a {
 	margin: 0px 6px;
 	padding:2px 5px;
-}
-.cake-sql-log table {
-	background: #f4f4f4;
-}
-.cake-sql-log td {
-	padding: 4px 8px;
-	text-align: left;
-	font-family: Monaco, Consolas, "Courier New", monospaced;
-}
-.cake-sql-log caption {
-	color:#fff;
 }
 
 /** Paging **/
@@ -403,4 +414,57 @@ p.error em {
 .success {
 	background: green;
 	color: #fff;
+}
+
+/**  Acciones Arriba **/
+div .actions_top {
+	height: 26px;
+	margin-bottom: 15px;
+}
+div .actions_top ul {
+	list-style: none;
+}
+div .actions_top li {
+	height: 16px;
+	padding: 4px 6px 6px 6px;
+	margin-right: 8px;
+	display: block;
+	float: left;
+	background: #e6e49f;
+	border:1px solid #aaac62;
+	
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+}
+div .actions_top li:hover{
+	background: #f0f09a;
+}
+div .actions_top a{
+	color: #333;
+	height: 16px;
+	padding: 0 0 0 22px;
+	text-decoration: none;
+	font-weight: bold;
+	background-repeat: no-repeat;
+}
+
+/** Iconos genéricos **/
+.icon_add {
+	background-image: url(/sexap/icons/add.png);
+}
+.icon_edit {
+	background-image: url(/sexap/icons/pencil.png);
+}
+.icon_delete {
+	background-image: url(/sexap/icons/delete.png);
+}
+.icon_view {
+	background-image: url(/sexap/icons/eye.png);
+}
+.icon_lock {
+	background-image: url(/sexap/icons/lock.png);
+}
+.icon_flag {
+	background-image: url(/sexap/icons/flag_red.png);
 }

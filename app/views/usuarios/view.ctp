@@ -1,3 +1,10 @@
+<div class="actions_top">
+	<ul>
+		<li><?php echo $this->Html->link(__('Editar perfil', true), array('action' => 'edit', $usuario['Usuario']['id']), array('class' => 'icon_edit')); ?> </li>
+		<li><?php echo $this->Html->link(__('Eliminar usuario', true), array('action' => 'delete', $usuario['Usuario']['id']), array('class' => 'icon_delete'), sprintf(__('Are you sure you want to delete # %s?', true), $usuario['Usuario']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Bloquear usuario', true), array('action' => 'ban', $usuario['Usuario']['id']), array('class' => 'icon_lock')); ?> </li>
+	</ul>
+</div>
 <div class="usuarios view">
 <h2><?php  __('Usuario');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
@@ -14,11 +21,6 @@
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Mat Eco'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $usuario['Usuario']['mat_eco']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Contrasena'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $usuario['Usuario']['contrasena']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Car Depto'); ?></dt>
@@ -67,27 +69,6 @@
 			&nbsp;
 		</dd>
 	</dl>
-</div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Usuario', true), array('action' => 'edit', $usuario['Usuario']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Usuario', true), array('action' => 'delete', $usuario['Usuario']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $usuario['Usuario']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Problemas', true), array('controller' => 'problemas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Problema', true), array('controller' => 'problemas', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Envios', true), array('controller' => 'envios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Envio', true), array('controller' => 'envios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Comentarios', true), array('controller' => 'comentarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Comentario', true), array('controller' => 'comentarios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Actividades', true), array('controller' => 'actividades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Actividad', true), array('controller' => 'actividades', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Grupos', true), array('controller' => 'grupos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Integrante De', true), array('controller' => 'grupos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Roles', true), array('controller' => 'roles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Rol', true), array('controller' => 'roles', 'action' => 'add')); ?> </li>
-	</ul>
 </div>
 <div class="related">
 	<h3><?php __('Related Problemas');?></h3>

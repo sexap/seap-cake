@@ -1,12 +1,34 @@
-<?php echo $html->link('Problemas',array('controller' => 'problemas'))?> <br/>
-<?php echo $html->link('Actividades',array('controller' => 'actividades'))?> <br/>
-<?php echo $html->link('Grupos',array('controller' => 'grupos'))?> <br/>
-<?php echo $html->link('Roles',array('controller' => 'roles'))?> <br/>
-<?php echo $html->link('Usuarios',array('controller' => 'usuarios'))?> <br/>
-<?php echo $html->link('UEAs',array('controller' => 'ueas'))?> <br/>
-<?php echo $html->link('Envios',array('controller' => 'envios'))?> <br/>
-<?php echo $html->link('Comentarios',array('controller' => 'comentarios'))?> <br/>
-<?php echo $html->link('Permisos',array('controller' => 'permisos'))?> <br/>
-<br/>
-<?php echo $html->link('Entrar',array('controller' => 'usuarios', 'action' => 'login'))?> <br/>
-<?php echo $html->link('Salir',array('controller' => 'usuarios', 'action' => 'logout'))?> <br/>
+<h2>Inicio</h2>
+<div id="avisos">
+<h3>Avisos</h3>
+<p>*Lorem ipsum dolor sit amet*, 
+consectetur adipisicing elit, sed do eiusmod tempor /incididunt ut labore et dolore/ magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+*Lorem ipsum dolor sit amet*, 
+consectetur adipisicing elit, sed do eiusmod tempor /incididunt ut labore et dolore/ magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+</div>
+
+<div id="eventos">
+<h3>Eventos</h3>
+<p>/(En curso)/ *Lorem ipsum dolor sit amet*</p>
+
+<p>/(En 3 minutos)/ Consectetur adipisicing elit, sed do eiusmod tempor</p>
+
+<p>/(En 2 días)/ Incididunt ut labore et dolore magna aliqua</p>
+
+<p>/(En 1 semana)/ Ut enim ad minim veniam, quis nostrud</p>
+</div>
+
+<div id="estadisticas">
+<h3>Estadisticas</h3>
+<p>/(En curso)/ *Lorem ipsum dolor sit amet*</p>
+
+<p>/(En 3 minutos)/ Consectetur adipisicing elit, sed do eiusmod tempor</p>
+
+<p>/(En 2 días)/ Incididunt ut labore et dolore magna aliqua</p>
+
+<p>/(En 1 semana)/ Ut enim ad minim veniam, quis nostrud</p>
+</div>
+

@@ -15,6 +15,7 @@ class AppController extends Controller {
 		$this->Auth->userModel = 'Usuario';
 		$this->Auth->fields = array('username' => 'mat_eco','password' => 'contrasena');
 		$this->Auth->authorize = 'controller';
+		$this->Auth->autoRedirect = false;
 		
 		//Otras configuraciones del módulo Auth
 		$this->Auth->logoutRedirect = '/';

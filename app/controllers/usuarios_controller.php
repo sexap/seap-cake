@@ -3,11 +3,24 @@ class UsuariosController extends AppController {
 
 	var $name = 'Usuarios';
 	
+	var $paginate = array(
+		'limit' => 20,
+		'fields' => array('id', 'nombre', 'mat_eco', 'baneado', 'razon')
+	);
+	
 	function _esAutor($user_id, $id){
 		return ($id == $user_id);
 	}
 	
 	function login(){
+		if(!empty($this->data)) {
+			if($this->Auth->login()){
+				if($this->Auth->user('razon') != ''){
+					$this->Session->setFlash('Algún administrador o moderador te ha advertido de un mal comportamiento. Revísalo en tu perfil.');
+				}
+				$this->redirect($this->Auth->redirect());
+			}
+		}
 	}
 	
 	function logout(){
@@ -80,6 +93,24 @@ class UsuariosController extends AppController {
 		$responsableDes = $this->Usuario->ResponsableDe->find('list');
 		$roles = $this->Usuario->Rol->find('list');
 		$this->set(compact('pendientes', 'integranteDes', 'responsableDes', 'roles'));
+	}
+	
+	function ban($id = null) {
+		if (!$id && empty($this->data)) {
+			$this->Session->setFlash(__('Invalid usuario', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		if (!empty($this->data)) {
+			if ($this->Usuario->save($this->data)) {
+				$this->Session->setFlash(__('The usuario has been saved', true));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The usuario could not be saved. Please, try again.', true));
+			}
+		}
+		if (empty($this->data)) {
+			$this->data = $this->Usuario->read(null, $id);
+		}
 	}
 
 	function delete($id = null) {
