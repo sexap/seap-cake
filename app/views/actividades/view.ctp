@@ -1,11 +1,11 @@
 <div class="actividades view">
-<h2><?php  __('Actividad');?></h2>
+<h2><?php  __($actividad['Actividad']['titulo']);?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<!-- <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $actividad['Actividad']['id']; ?>
 			&nbsp;
-		</dd>
+		</dd> 
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Usuario'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $this->Html->link($actividad['Usuario']['nombre'], array('controller' => 'usuarios', 'action' => 'view', $actividad['Usuario']['id'])); ?>
@@ -15,7 +15,7 @@
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $actividad['Actividad']['titulo']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Tema'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $actividad['Actividad']['tema']; ?>
@@ -39,22 +39,13 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
+	<h3><?php __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Actividad', true), array('action' => 'edit', $actividad['Actividad']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Actividad', true), array('action' => 'delete', $actividad['Actividad']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $actividad['Actividad']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Actividades', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Actividad', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios', true), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario', true), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Envios', true), array('controller' => 'envios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Envio', true), array('controller' => 'envios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Grupos', true), array('controller' => 'grupos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Grupo', true), array('controller' => 'grupos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Problemas', true), array('controller' => 'problemas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Problema', true), array('controller' => 'problemas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Actividad', true), array('action' => 'edit', $actividad['Actividad']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Borrar Actividad', true), array('action' => 'delete', $actividad['Actividad']['id']), null, sprintf(__('Esta seguro que desea borrar # %s?', true), $actividad['Actividad']['id'])); ?> </li>
 	</ul>
 </div>
+<!-- 
 <div class="related">
 	<h3><?php __('Related Envios');?></h3>
 	<?php if (!empty($actividad['Envio'])):?>
@@ -149,22 +140,22 @@
 		</ul>
 	</div>
 </div>
+-->
 <div class="related">
-	<h3><?php __('Related Problemas');?></h3>
+	<h3><?php __('Problemas');?></h3>
 	<?php if (!empty($actividad['Problema'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Titulo'); ?></th>
-		<th><?php __('Autor'); ?></th>
-		<th><?php __('Enunciado'); ?></th>
-		<th><?php __('Observaciones'); ?></th>
-		<th><?php __('Palabras Clave'); ?></th>
-		<th><?php __('Dificultad'); ?></th>
-		<th><?php __('Privado'); ?></th>
-		<th><?php __('Uea Id'); ?></th>
-		<th><?php __('Usuario Id'); ?></th>
-		<th class="actions"><?php __('Actions');?></th>
+		<th><?php __('id');?></th>
+		<th><?php __('titulo');?></th>
+		<th><?php __('autor');?></th>
+		<!-- <th><?php __('enunciado');?></th> -->
+		<!-- <th><?php __('observaciones');?></th> -->
+		<th><?php __('palabras_clave');?></th>
+		<th><?php __('dificultad');?></th>
+		<th><?php __('privado');?></th>
+		<th><?php __('uea_id');?></th>
+		<th><?php __('usuario_id');?></th>
 	</tr>
 	<?php
 		$i = 0;
@@ -176,28 +167,17 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $problema['id'];?></td>
-			<td><?php echo $problema['titulo'];?></td>
+			<td><?php echo $this->Html->link(__($problema['titulo'], true), array('controller' => 'problemas', 'action' => 'view', $problema['id'])); ?></td>
 			<td><?php echo $problema['autor'];?></td>
-			<td><?php echo $problema['enunciado'];?></td>
-			<td><?php echo $problema['observaciones'];?></td>
+			<!-- <td><?php echo $problema['enunciado'];?></td>
+			<td><?php echo $problema['observaciones'];?></td> -->
 			<td><?php echo $problema['palabras_clave'];?></td>
 			<td><?php echo $problema['dificultad'];?></td>
 			<td><?php echo $problema['privado'];?></td>
 			<td><?php echo $problema['uea_id'];?></td>
 			<td><?php echo $problema['usuario_id'];?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('controller' => 'problemas', 'action' => 'view', $problema['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'problemas', 'action' => 'edit', $problema['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'problemas', 'action' => 'delete', $problema['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $problema['id'])); ?>
-			</td>
 		</tr>
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Problema', true), array('controller' => 'problemas', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
 </div>
